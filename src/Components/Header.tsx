@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import {Logo} from "./Logo";
 import {dFlex,  flexBetweenCenter} from '../themes/commonThemes';
 import {Container} from "@mui/material";
+import {MenuPages} from "./MenuPages";
 
 export const Header = () => {
     return (
@@ -23,6 +24,7 @@ export const Header = () => {
                     px: 4,
                 }}>
                     <Logo/>
+                    <MenuPages/>
                 </Box>
             </Container>
         </Box>
