@@ -1,13 +1,10 @@
 import React from 'react';
-import HomeIcon from '@mui/icons-material/Home';
-import RestaurantIcon from '@mui/icons-material/Restaurant';
-import PersonIcon from '@mui/icons-material/Person';
-import Link from 'next/link';
 import Box from "@mui/material/Box";
 import {Logo} from "./Logo";
-import {dFlex,  flexBetweenCenter} from '../themes/commonThemes';
+import {dFlex, displayOnDesktop, flexBetweenCenter} from '../themes/commonThemes';
 import {Container} from "@mui/material";
 import {MenuPages} from "./MenuPages";
+import {ProfileMenu} from "./ProfileMenu";
 
 export const Header = () => {
     return (
@@ -23,8 +20,11 @@ export const Header = () => {
                     minHeight: 70,
                     px: 4,
                 }}>
-                    <Logo/>
+                    <Box sx={displayOnDesktop}>
+                        <Logo/>
+                    </Box>
                     <MenuPages/>
+                    <ProfileMenu/>
                 </Box>
             </Container>
         </Box>
