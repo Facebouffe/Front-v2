@@ -1,13 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import Button from '@mui/material/Button'
 import Box from '@mui/material/Box';
 import CssBaseline from "@mui/material/CssBaseline";
 import {Header} from "../src/Components/Header";
-
-const inter = Inter({ subsets: ['latin'] })
+import {FilterTab} from "../src/Components/FilterTab";
 
 export default function Home() {
   return (
@@ -19,17 +15,17 @@ export default function Home() {
         <link rel="icon" href="" />
       </Head>
       <main className={styles.main}>
-          <CssBaseline>
-              <Box sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: '100vh',
-              }}>
-                  <Box>
-                      <Header/>
-                  </Box>
+          <CssBaseline/>
+          <Box sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100vh',
+          }}>
+              <Box>
+                  <Header/>
+                  <FilterTab/>
               </Box>
-          </CssBaseline>
+          </Box>
       </main>
     </>
   )
