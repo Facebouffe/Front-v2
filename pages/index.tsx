@@ -3,6 +3,9 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import Button from '@mui/material/Button'
+import Box from '@mui/material/Box';
+import CssBaseline from "@mui/material/CssBaseline";
+import {Header} from "../src/Components/Header";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +19,17 @@ export default function Home() {
         <link rel="icon" href="" />
       </Head>
       <main className={styles.main}>
-        <Button>Test</Button>
+          <CssBaseline>
+              <Box sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100vh',
+              }}>
+                  <Box>
+                      <Header/>
+                  </Box>
+              </Box>
+          </CssBaseline>
       </main>
     </>
   )
