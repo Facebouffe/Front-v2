@@ -4,15 +4,22 @@ import Button from "@mui/material/Button";
 import {IoPersonOutline} from "react-icons/io5";
 import {common} from "@mui/material/colors";
 import {flexCenter} from "../themes/commonThemes";
+import Link from 'next/link'
 
 export const ProfileMenu = () => {
-  return (
-      <Box sx={{
-          flexCenter
-      }}>
-          <Button>
-              <IoPersonOutline size={40} color={common["white"]}/>
-          </Button>
-      </Box>
-  )
+
+    return (
+        <Box sx={{
+            flexCenter
+        }}>
+            <Link href={"/inscription"} passHref>
+                <Button >
+                    <IoPersonOutline size={40} color={common["white"]}/>
+                </Button>
+            </Link>
+
+        </Box>
+     )
 }
+
+
