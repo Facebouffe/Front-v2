@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 import CssBaseline from "@mui/material/CssBaseline";
 import {Header} from "../src/Components/Header";
 import {FilterTab} from "../src/Components/FilterTab";
+import {RestaurantCard} from "../src/Components/RestaurantCard";
+import Container from "@mui/material/Container";
 
 export default function Home() {
   return (
@@ -24,6 +26,12 @@ export default function Home() {
               <Box>
                   <Header/>
                   <FilterTab/>
+                  <Container maxWidth={"xl"} sx={{
+                      mb: 3,
+                      mt: 5
+                  }}>
+                      <RestaurantCard/>
+                  </Container>
               </Box>
           </Box>
       </main>
