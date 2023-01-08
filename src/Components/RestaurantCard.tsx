@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import {ButtonGroup, Paper} from "@mui/material";
+import Link from "next/link";
 
 export const RestaurantCard = () => {
     const [cards] = React.useState(Restaurants);
@@ -52,12 +53,11 @@ export const RestaurantCard = () => {
                                     <ButtonGroup>
                                         <Button>J'aime</Button>
                                         <Button>Commentaires</Button>
-                                        <Button>Commander</Button>
+                                        <Link href={'/restaurant'} passHref><Button component={"a"}>Commander</Button></Link>
                                     </ButtonGroup>
                                     </Box>
                             </Paper>
                         </Grid>
-
                     )
                 })}
             </Grid>
