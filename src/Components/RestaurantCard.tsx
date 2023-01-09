@@ -53,7 +53,7 @@ export const RestaurantCard = () => {
                                     <ButtonGroup>
                                         <Button>J'aime</Button>
                                         <Button>Commentaires</Button>
-                                        <Link href={'/restaurant'} passHref><Button component={"a"}>Commander</Button></Link>
+                                        <Link href={"/restaurants/[id]}"} as={`/Restaurants/${restaurant.id}`} passHref legacyBehavior><Button>Commander</Button></Link>
                                     </ButtonGroup>
                                     </Box>
                             </Paper>

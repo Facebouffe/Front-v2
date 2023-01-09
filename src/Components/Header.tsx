@@ -11,7 +11,6 @@ export const Header = () => {
         <Box sx={{
             ...dFlex,
             minHeight: 70,
-            borderBottom: '1px solid black',
             backgroundColor: 'primary.main',
         }}>
             <Container maxWidth={"xl"}>
