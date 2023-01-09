@@ -2,8 +2,19 @@ import Box from '@mui/material/Box';
 import Head from 'next/head'
 import CssBaseline from "@mui/material/CssBaseline";
 import {Header} from "../../src/Components/Header";
+import {useRouter} from "next/router";
+import {Restaurants} from "../../src/data/filter-data"
+import Typography from "@mui/material/Typography";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 
 export default function RestaurantPage() {
+
+    const router = useRouter();
+    const { id } = router.query;
+    const selectedRestaurant = Restaurants.find(item => item.id.toString() === id)
+    const menu = selectedRestaurant && selectedRestaurant.menu
+
     return (
         <>
             <Head>
@@ -21,6 +32,19 @@ export default function RestaurantPage() {
                 }}>
                     <Box>
                         <Header/>
+                        <Box>
+                            <Typography>
+                                {selectedRestaurant && selectedRestaurant.name}
+                            </Typography>
+                        </Box>
+                        <Box sx={{
+                          backgroundColor: "red",
+                            width: "100%",
+                        }}>
+                            <Tabs>
+                                {}
+                            </Tabs>
+                        </Box>
                     </Box>
                 </Box>
             </main>

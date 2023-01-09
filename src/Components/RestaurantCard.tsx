@@ -6,6 +6,11 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import {ButtonGroup, Paper} from "@mui/material";
 import Link from "next/link";
+import Router from "next/router";
+
+function handleClickCommand(id: any) {
+    Router.push(`/Restaurants/${id}`).then(r => true)
+}
 
 export const RestaurantCard = () => {
     const [cards] = React.useState(Restaurants);
@@ -53,7 +58,7 @@ export const RestaurantCard = () => {
                                     <ButtonGroup>
                                         <Button>J'aime</Button>
                                         <Button>Commentaires</Button>
-                                        <Link href={"/restaurants/[id]}"} as={`/Restaurants/${restaurant.id}`} passHref legacyBehavior><Button>Commander</Button></Link>
+                                        <Button onClick={() => handleClickCommand(restaurant.id)}>Commander</Button>
                                     </ButtonGroup>
                                     </Box>
                             </Paper>
