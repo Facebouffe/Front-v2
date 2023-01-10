@@ -9,6 +9,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import {FilterMenu} from "../../src/Components/FilterMenu";
 import React from "react";
+import {Paper} from "@mui/material";
 
 export default function RestaurantPage() {
     const router = useRouter();
@@ -33,15 +34,37 @@ export default function RestaurantPage() {
                 }}>
                     <Box>
                         <Header/>
-                        <Typography fontSize={46} sx={{
-                            display: 'flex',
-                            px: {xs: 0, md:2},
-                            justifyContent: 'center',
-                            mt:2,
-                            mb:2,
+                        <Paper sx={{
+                            display: "flex",
+                            flexDirection: {xs: "column", md:"row"},
+                            mt: 2,
+                            ml: 2,
+                            mr: 2,
+                            pt: 2,
+                            pb: 2,
+                            px: 2
                         }}>
-                            {selectedRestaurant && selectedRestaurant.name}
-                        </Typography>
+                            <Box sx={{
+                                justifyContent: "center"
+                            }} >
+                                <Box component={"img"} sx={{
+                                    height: 230,
+                                    width: 340,
+                                    display: 'block',
+                                    overflow: 'hidden',
+                                    borderRadius: 3,
+                                }} src={selectedRestaurant && selectedRestaurant.image}>
+                                </Box>
+                            </Box>
+
+                            <Typography fontSize={46} sx={{
+                                display: 'flex',
+                                px: {xs: 0, md:2},
+                                justifyContent: 'center',
+                            }}>
+                                {selectedRestaurant && selectedRestaurant.name}
+                            </Typography>
+                        </Paper>
                         <FilterMenu/>
                     </Box>
                 </Box>
