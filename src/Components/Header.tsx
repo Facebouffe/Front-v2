@@ -15,15 +15,34 @@ export const Header = () => {
         }}>
             <Container maxWidth={"xl"}>
                 <Box sx={{
-                    ...flexBetweenCenter,
+                    //...flexBetweenCenter,
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: 'center',
+                    justifyContent: "space-between",
                     minHeight: 70,
-                    px: 4,
+                    //px: 4,
                 }}>
-                    <Box sx={displayOnDesktop}>
+                    <Box sx={{//...displayOnDesktop,
+                        flex: 1,
+                        justifyContent: "flex-start"
+                    }}>
                         <Logo/>
                     </Box>
-                    <MenuPages/>
-                    <ProfileMenu/>
+                    <Box sx={{
+                        flex: 1,
+                        justifyContent: "center",
+                        display: "flex",
+                    }}>
+                        <MenuPages/>
+                    </Box>
+                    <Box sx={{
+                        display: "flex",
+                        justifyContent: "flex-end",
+                        flex: 1
+                    }}>
+                        <ProfileMenu/>
+                    </Box>
                 </Box>
             </Container>
         </Box>
