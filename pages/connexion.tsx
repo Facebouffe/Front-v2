@@ -1,7 +1,10 @@
 import React from 'react';
 import Grid from "@mui/material/Grid";
-import {Box} from '@mui/material';
+import {Box, TextField} from '@mui/material';
 import Link from 'next/link'
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import {Logo} from "../src/Components/Logo";
 
 
 const Connexion = () => {
@@ -16,53 +19,44 @@ const Connexion = () => {
             // }
             // }}
         >
-            <div>
-                <Grid container alignItems='stretch' style={{minHeight: '100vh'}}>
-                    <Grid item xs={7}
-                          style={{
-                              background: '#FFFFFF',
+            <Box>
+                <Grid container alignItems='stretch' sx={{minHeight: '100vh'}}>
+                    <Grid item xs={12} md={7}
+                          sx={{
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
                               flexDirection: 'column'
                           }}>
+                        <Logo/>
+                        <Typography variant={'h2'} sx={{fontSize: {xs: 20, md: 50}}}
+                        >Connectez-vous à votre compte</Typography>
+                        <Box sx={{
+                            display: 'flex', alignItems: 'center',
+                            justifyContent: 'center',
+                            flexDirection: 'column', width: "60%"
+                        }}>
+                            <TextField placeholder={'Adresse mail'} fullWidth sx={
+                                {
+                                    background: '#D9D9D9',
+                                    borderRadius: '20px',
+                                    border: 'none',
+                                    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+                                }
+                            }
 
-                        <h2 style={{
-                            width: '549px', height: '44px', fontStyle: 'normal',
-                            fontWeight: '400',
-                            fontSize: '36px',
-                            lineHeight: '44px'
-                        }}
-                        >Connectez-vous à votre compte</h2>
-                        <input placeholder={'Adresse mail'} style={
+                            /> <TextField fullWidth placeholder={'Mot de passe'} sx={
                             {
                                 background: '#D9D9D9',
                                 borderRadius: '20px',
-                                width: '457px',
-                                height: '37px',
-                                left: '46px',
-                                top: '70px',
-                                marginBottom: '20px',
                                 border: 'none',
-                                boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
-
+                                boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+                                marginBottom: '20px',
+                                mt: 2
                             }
                         }
-                        /> <input placeholder={'Mot de passe'} style={
-                        {
-                            background: '#D9D9D9',
-                            borderRadius: '20px',
-                            width: '457px',
-                            height: '37px',
-                            left: '46px',
-                            top: '70px',
-                            border: 'none',
-                            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-                            marginBottom: '20px'
-                        }
-                    }
-                    />
-                        <button style={{
+                        /></Box>
+                        <Button sx={{
                             background: '#444444',
                             borderRadius: '20px',
                             padding: ' 5px 66px',
@@ -78,44 +72,45 @@ const Connexion = () => {
                                     e.currentTarget.style.background = '#444444';
                                     e.currentTarget.style.color = '#E9E9E9'
                                 }}>Se connecter
-                        </button>
+                        </Button>
                     </Grid>
 
-                    <Grid item xs={5} style={{
+                    <Grid item xs={5} sx={{
+                        display: {xs: 'none', md: 'flex'},
                         background: '#444444',
-                        color: 'white', display: 'flex',
+                        color: 'white',
                         alignItems: 'center',
                         justifyContent: 'center', flexDirection: 'column',
                     }}
                     >
-                        <h2>Nouveau ici ?</h2>
-                        <p style={{marginBottom: '20px'}}>Inscrivez-vous et découvrez une grande quantité de nouvelles
-                            opportunités! </p>
-                       <Link href={"/inscription"} passHref>
-                        <button style={
-                            {
-                                background: '#E9E9E9',
-                                borderRadius: '20px',
-                                padding: ' 5px 66px',
-                                border: 'none',
-                                cursor: 'pointer',
-                                transition: 'background 0.2s ease-in-out'
+                        <Typography variant={'h2'}>Nouveau ici ?</Typography>
+                        <Typography sx={{fontSize:25,marginBottom: 20}}>Inscrivez-vous et découvrez une grande quantité de nouvelle
+                            opportunités! </Typography>
+                        <Link href={"/inscription"} passHref>
+                            <Button style={
+                                {
+                                    background: '#E9E9E9',
+                                    borderRadius: '20px',
+                                    padding: ' 5px 66px',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    transition: 'background 0.2s ease-in-out'
 
+                                }
                             }
-                        }
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.background = '#444444';
-                                    e.currentTarget.style.color = '#E9E9E9'
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.background = '#E9E9E9';
-                                    e.currentTarget.style.color = '#444444'
-                                }}>Inscription
-                        </button>
-                       </Link>
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.background = '#444444';
+                                        e.currentTarget.style.color = '#E9E9E9'
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.background = '#E9E9E9';
+                                        e.currentTarget.style.color = '#444444'
+                                    }}>Inscription
+                            </Button>
+                        </Link>
                     </Grid>
                 </Grid>
-            </div>
+            </Box>
         </Box>
     );
 };

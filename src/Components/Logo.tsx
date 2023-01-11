@@ -9,10 +9,10 @@ export const Logo = (
 ) => {
     return (
         <Box sx={flexCenter}>
-            <CiFacebook size={40} color={common["white"]}/>
+            <CiFacebook size={40} color={common["black"]}/>
             <Typography sx={{
                 ml: 1,
-                color: common["white"],
+                color: common["black"],
                 fontSize: '20px',
                 fontWeight: 'bold'
             }} component={"h3"}>
