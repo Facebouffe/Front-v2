@@ -1,11 +1,12 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Box from '@mui/material/Box';
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import {Header} from "../src/Components/Header";
-import {FilterTab} from "../src/Components/FilterTab";
-import {RestaurantCard} from "../src/Components/RestaurantCard";
+import { Header } from "../src/Components/Header";
+import { FilterTab } from "../src/Components/FilterTab";
+import { RestaurantCard } from "../src/Components/RestaurantCard";
 import Container from "@mui/material/Container";
+import { signIn, signOut } from "next-auth/react";
 
 export default function Home() {
   return (
@@ -17,24 +18,29 @@ export default function Home() {
         <link rel="icon" href="" />
       </Head>
       <main className={styles.main}>
-          <CssBaseline/>
-          <Box sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              height: '100vh',
-          }}>
-              <Box>
-                  <Header/>
-                  <FilterTab/>
-                  <Container maxWidth={"xl"} sx={{
-                      mb: 3,
-                      mt: 5
-                  }}>
-                      <RestaurantCard/>
-                  </Container>
-              </Box>
+        <CssBaseline />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100vh",
+          }}
+        >
+          <Box>
+            <Header />
+            <FilterTab />
+            <Container
+              maxWidth={"xl"}
+              sx={{
+                mb: 3,
+                mt: 5,
+              }}
+            >
+              <RestaurantCard />
+            </Container>
           </Box>
+        </Box>
       </main>
     </>
-  )
+  );
 }

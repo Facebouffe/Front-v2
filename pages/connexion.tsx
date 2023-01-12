@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useRef } from "react";
 import Grid from "@mui/material/Grid";
 import { Box, TextField } from "@mui/material";
 import Link from "next/link";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Logo } from "../src/Components/Logo";
+import { signIn } from "next-auth/react";
 
-const Connexion = () => {
+const Connexion = async () => {
+  const userName = useRef("");
+  const pass = useRef("");
+  const onSubmit = async () => {
+    const result = await signIn("credentials", {
+      username: userName.current,
+      password: pass.current,
+      redirect: true,
+      callbackUrl: "/",
+    });
+  };
   return (
     <Box
     //     sx={{
@@ -48,6 +59,7 @@ const Connexion = () => {
               <TextField
                 placeholder={"Adresse mail"}
                 fullWidth
+                onChange={(e) => (userName.current = e.target.value)}
                 sx={{
                   background: "#D9D9D9",
                   borderRadius: "20px",
@@ -57,6 +69,8 @@ const Connexion = () => {
               />{" "}
               <TextField
                 fullWidth
+                type={"password"}
+                onChange={(e) => (pass.current = e.target.value)}
                 placeholder={"Mot de passe"}
                 sx={{
                   background: "#D9D9D9",
@@ -86,6 +100,7 @@ const Connexion = () => {
                 e.currentTarget.style.background = "#444444";
                 e.currentTarget.style.color = "#E9E9E9";
               }}
+              onClick={onSubmit}
             >
               Se connecter
             </Button>
