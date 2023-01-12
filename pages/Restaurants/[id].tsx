@@ -4,22 +4,16 @@ import CssBaseline from "@mui/material/CssBaseline";
 import {Header} from "../../src/Components/Header";
 import {useRouter} from "next/router";
 import {Restaurants} from "../../src/data/filter-data"
-import Typography from "@mui/material/Typography";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
 import {FilterMenu} from "../../src/Components/FilterMenu";
 import React from "react";
-import {Divider, Paper, Rating} from "@mui/material";
+import {Divider} from "@mui/material";
 import {InfoRestaurant} from "../../src/Components/InfoRestaurant";
-
-function defaultLabelText(value : number) { return `${value} Star${value !== 1 ? 's' : ''}`; }
+import {MenuRestaurant} from "../../src/Components/MenuRestaurant";
 
 export default function RestaurantPage() {
     const router = useRouter();
     const { id } = router.query;
     const selectedRestaurant = Restaurants.find(item => item.id.toString() === id)
-    const menu = selectedRestaurant && selectedRestaurant.menu
-
     if (selectedRestaurant === undefined) {
         return null
     }
@@ -48,7 +42,7 @@ export default function RestaurantPage() {
                         rating={selectedRestaurant.rating}/>
                     <Divider/>
                     <FilterMenu/>
-
+                    <MenuRestaurant/>
                 </Box>
             </main>
         </>

@@ -43,8 +43,8 @@ export const FilterMenu = () => {
                         },
                     }}>
                     {
-                        selectedRestaurant && selectedRestaurant.menu.map(tab => {
-                            return <Tab key={tab.type} label={tab.type}/>;
+                        selectedRestaurant && selectedRestaurant.menu.map((tab, index) => {
+                            return <Tab key={index} label={tab.type}/>;
                         })
                     }
                 </Tabs>

@@ -23,7 +23,61 @@ export const Restaurants = [
         image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         menu: [
             {
-                "name": "Coq au vin",
+                "plat": "Coq au vin",
+                "type": "Plat",
+                "prix": 15,
+                "description": "Un plat traditionnel français à base de poulet cuit lentement dans du vin rouge et de légumes."
+            },
+            {
+                "plat": "Croque-monsieur",
+                "type": "Sandwich",
+                "prix": 12,
+                "description": "Un sandwich au jambon et au fromage grillé."
+            },
+            {
+                "plat": "Tarte tatin",
+                "type": "Dessert",
+                "prix": 10,
+                "description": "Un dessert à base de pommes caramélisées et de pâte feuilletée."
+            },
+            {
+                "plat": "Coq au vin",
+                "type": "Plat",
+                "prix": 15,
+                "description": "Un plat traditionnel français à base de poulet cuit lentement dans du vin rouge et de légumes."
+            },
+            {
+                "plat": "Croque-monsieur",
+                "type": "Sandwich",
+                "prix": 12,
+                "description": "Un sandwich au jambon et au fromage grillé."
+            },
+            {
+                "plat": "Tarte tatin",
+                "type": "Dessert",
+                "prix": 10,
+                "description": "Un dessert à base de pommes caramélisées et de pâte feuilletée."
+            },
+            {
+                "plat": "Coq au vin",
+                "type": "Plat",
+                "prix": 15,
+                "description": "Un plat traditionnel français à base de poulet cuit lentement dans du vin rouge et de légumes."
+            },
+            {
+                "plat": "Croque-monsieur",
+                "type": "Sandwich",
+                "prix": 12,
+                "description": "Un sandwich au jambon et au fromage grillé."
+            },
+            {
+                "plat": "Tarte tatin",
+                "type": "Dessert",
+                "prix": 10,
+                "description": "Un dessert à base de pommes caramélisées et de pâte feuilletée."
+            },
+            {
+                "plat": "Coq au vin",
                 "type": "Plat",
                 "prix": 15,
                 "description": "Un plat traditionnel français à base de poulet cuit lentement dans du vin rouge et de légumes."
@@ -67,6 +121,42 @@ export const Restaurants = [
                 "prix": 12,
                 "description": "Des boules de glace recouvertes de chocolat fondu et accompagnées de choux à la crème."
             },
+            {
+                "plat": "Coq au vin",
+                "type": "Plat",
+                "prix": 15,
+                "description": "Un plat traditionnel français à base de poulet cuit lentement dans du vin rouge et de légumes."
+            },
+            {
+                "plat": "Croque-monsieur",
+                "type": "Sandwich",
+                "prix": 12,
+                "description": "Un sandwich au jambon et au fromage grillé."
+            },
+            {
+                "plat": "Tarte tatin",
+                "type": "Dessert",
+                "prix": 10,
+                "description": "Un dessert à base de pommes caramélisées et de pâte feuilletée."
+            },
+            {
+                "plat": "Coq au vin",
+                "type": "Plat",
+                "prix": 15,
+                "description": "Un plat traditionnel français à base de poulet cuit lentement dans du vin rouge et de légumes."
+            },
+            {
+                "plat": "Croque-monsieur",
+                "type": "Sandwich",
+                "prix": 12,
+                "description": "Un sandwich au jambon et au fromage grillé."
+            },
+            {
+                "plat": "Tarte tatin",
+                "type": "Dessert",
+                "prix": 10,
+                "description": "Un dessert à base de pommes caramélisées et de pâte feuilletée."
+            },
         ]
     },
     {
@@ -93,6 +183,78 @@ export const Restaurants = [
                 "type": "Dessert",
                 "prix": 14,
                 "description": "Un dessert à base de biscuits imbibés de café, de crème mascarpone et de cacao."
+            },
+            {
+                "plat": "Coq au vin",
+                "type": "Plat",
+                "prix": 15,
+                "description": "Un plat traditionnel français à base de poulet cuit lentement dans du vin rouge et de légumes."
+            },
+            {
+                "plat": "Croque-monsieur",
+                "type": "Sandwich",
+                "prix": 12,
+                "description": "Un sandwich au jambon et au fromage grillé."
+            },
+            {
+                "plat": "Tarte tatin",
+                "type": "Dessert",
+                "prix": 10,
+                "description": "Un dessert à base de pommes caramélisées et de pâte feuilletée."
+            },
+            {
+                "plat": "Coq au vin",
+                "type": "Plat",
+                "prix": 15,
+                "description": "Un plat traditionnel français à base de poulet cuit lentement dans du vin rouge et de légumes FSDFSDF SFSDFSD FSDFEERES SDFSDFRGDG ZEEZ REFSGER TER."
+            },
+            {
+                "plat": "Croque-monsieur",
+                "type": "Sandwich",
+                "prix": 12,
+                "description": "Un sandwich au jambon et au fromage grillé."
+            },
+            {
+                "plat": "Tarte tatin",
+                "type": "Dessert",
+                "prix": 10,
+                "description": "Un dessert à base de pommes caramélisées et de pâte feuilletée."
+            },
+            {
+                "plat": "Coq au vin",
+                "type": "Plat",
+                "prix": 15,
+                "description": "Un plat traditionnel français à base de poulet cuit lentement dans du vin rouge et de légumes."
+            },
+            {
+                "plat": "Croque-monsieur",
+                "type": "Sandwich",
+                "prix": 12,
+                "description": "Un sandwich au jambon et au fromage grillé."
+            },
+            {
+                "plat": "Tarte tatin",
+                "type": "Dessert",
+                "prix": 10,
+                "description": "Un dessert à base de pommes caramélisées et de pâte feuilletée."
+            },
+            {
+                "plat": "Coq au vin",
+                "type": "Plat",
+                "prix": 15,
+                "description": "Un plat traditionnel français à base de poulet cuit lentement dans du vin rouge et de légumes."
+            },
+            {
+                "plat": "Croque-monsieur",
+                "type": "Sandwich",
+                "prix": 12,
+                "description": "Un sandwich au jambon et au fromage grillé."
+            },
+            {
+                "plat": "Tarte tatin",
+                "type": "Dessert",
+                "prix": 10,
+                "description": "Un dessert à base de pommes caramélisées et de pâte feuilletée."
             },
         ]
     },

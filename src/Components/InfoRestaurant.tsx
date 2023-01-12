@@ -37,7 +37,7 @@ export const InfoRestaurant = (selectedRestaurant: { image: string ; name: strin
                     px: {xs: 0, md:2},
                     flexDirection: "column",
                 }}>
-                    <Typography fontSize={46} >
+                    <Typography component={"h1"} fontSize={46} color={"primary"} >
                         {selectedRestaurant.name}
                     </Typography>
                     <Typography>
