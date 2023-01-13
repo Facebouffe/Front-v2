@@ -3,6 +3,14 @@ import {Divider, Stack} from "@mui/material";
 import {IoHomeOutline, IoRestaurantOutline} from "react-icons/io5";
 import {common} from "@mui/material/colors";
 import Button from "@mui/material/Button";
+import { useContext } from 'react'
+import Router from "next/router"
+
+
+    function handleClick() {
+        Router.push('/commandes').then(r=>true);
+    }
+
 
 export const MenuPages = (
 ) => {
@@ -19,7 +27,7 @@ export const MenuPages = (
             <Button href={"/"}>
                 <IoHomeOutline size={40} color={common["white"]}/>
             </Button>
-            <Button>
+            <Button onClick={handleClick}>
                 <IoRestaurantOutline size={40} color={common["white"]}/>
             </Button>
         </Stack>
