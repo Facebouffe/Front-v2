@@ -16,7 +16,7 @@ export const Logo = (
             <CiFacebook size={40} color={common["white"]}/>
             <Typography sx={{
                 ml: 1,
-                color: common["white"],
+                color: common["black"],
                 fontSize: '20px',
                 fontWeight: 'bold',
                 ...displayOnDesktop
