@@ -8,7 +8,11 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import {Tooltip} from "@mui/material";
 import {Logout} from "@mui/icons-material";
+import Router from "next/router";
 
+function handleClickAccount(id: any) {
+    Router.push(`/account`).then(r => true)
+}
 export const AccountMenu = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -74,7 +78,7 @@ export const AccountMenu = () => {
               transformOrigin={{ horizontal: 'right', vertical: 'top' }}
               anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <MenuItem><Avatar/>Mon compte</MenuItem>
+                <MenuItem onClick={handleClickAccount}><Avatar/>Mon compte</MenuItem>
                 <Divider/>
                 <MenuItem>
                     <ListItemIcon>
