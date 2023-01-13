@@ -12,14 +12,11 @@ export const ProfileMenu = () => {
         <Box sx={{
             flexCenter
         }}>
-            <Link href={"/connexion"} passHref>
-                <Button >
-                    <IoPersonOutline size={40} color={common["white"]}/>
-                </Button>
-            </Link>
-
+            <Button>
+                <IoPersonOutline size={40} color={common["white"]}/>
+            </Button>
         </Box>
-     )
+    )
 }
 
 
