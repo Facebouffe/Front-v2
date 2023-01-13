@@ -4,7 +4,6 @@ import {Logo} from "./Logo";
 import {dFlex, displayOnDesktop, flexBetweenCenter} from '../themes/commonThemes';
 import {Container} from "@mui/material";
 import {MenuPages} from "./MenuPages";
-import {ProfileMenu} from "./ProfileMenu";
 
 export const Header = () => {
     return (
@@ -24,7 +23,6 @@ export const Header = () => {
                         <Logo/>
                     </Box>
                     <MenuPages/>
-                    <ProfileMenu/>
                 </Box>
             </Container>
         </Box>
