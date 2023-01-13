@@ -5,12 +5,19 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import {ButtonGroup, Paper} from "@mui/material";
+import Link from "next/link";
+import Router from "next/router";
+
+function handleClickMenu(id: any) {
+    Router.push(`/Restaurants/${id}`).then(r => true)
+}
 
 export const RestaurantCard = () => {
     const [cards] = React.useState(Restaurants);
     if (!cards.length) {
         return null
     }
+
     return (
         <Box sx={{
             mx: 2,
@@ -52,12 +59,11 @@ export const RestaurantCard = () => {
                                     <ButtonGroup>
                                         <Button>J'aime</Button>
                                         <Button>Commentaires</Button>
-                                        <Button>Commander</Button>
+                                        <Button onClick={() => handleClickMenu(restaurant.id)}>Commander</Button>
                                     </ButtonGroup>
                                     </Box>
                             </Paper>
                         </Grid>
-
                     )
                 })}
             </Grid>

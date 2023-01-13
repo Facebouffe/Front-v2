@@ -28,6 +28,7 @@ export const FilterTab = () => {
             onChange={handleChange}
             variant={"scrollable"}
             scrollButtons
+
             sx={{
                 [`&.${tabsClasses.scrollButtons}`]: {
                     '&.Mui-disabled': {opacity: 0.3},

@@ -13,8 +13,10 @@ export const MenuPages = (
             backgroundColor: common["white"],
         }}/>}
         spacing={{xs: 1, sm:2}}
+        sx={{
+        }}
         >
-            <Button>
+            <Button href={"/"}>
                 <IoHomeOutline size={40} color={common["white"]}/>
             </Button>
             <Button>
