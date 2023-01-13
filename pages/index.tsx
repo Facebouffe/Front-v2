@@ -6,7 +6,6 @@ import { Header } from "../src/Components/Header";
 import { FilterTab } from "../src/Components/FilterTab";
 import { RestaurantCard } from "../src/Components/RestaurantCard";
 import Container from "@mui/material/Container";
-import { signIn, signOut } from "next-auth/react";
 
 export default function Home() {
   return (

@@ -1,35 +1,14 @@
-import React, { useRef } from "react";
+import React from "react";
 import Grid from "@mui/material/Grid";
 import { Box, TextField } from "@mui/material";
 import Link from "next/link";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Logo } from "../src/Components/Logo";
-import { signIn } from "next-auth/react";
 
-const Connexion = async () => {
-  const userName = useRef("");
-  const pass = useRef("");
-  const onSubmit = async () => {
-    const result = await signIn("credentials", {
-      username: userName.current,
-      password: pass.current,
-      redirect: true,
-      callbackUrl: "/",
-    });
-  };
+const Connexion = () => {
   return (
-    <Box
-    //     sx={{
-    // width:{
-    //     xs:345,
-    //     sm:690,
-    //     md:1035,
-    //     lg:1380,
-    //     xl:1775
-    // }
-    // }}
-    >
+    <Box>
       <Box>
         <Grid container alignItems="stretch" sx={{ minHeight: "100vh" }}>
           <Grid
@@ -59,7 +38,6 @@ const Connexion = async () => {
               <TextField
                 placeholder={"Adresse mail"}
                 fullWidth
-                onChange={(e) => (userName.current = e.target.value)}
                 sx={{
                   background: "#D9D9D9",
                   borderRadius: "20px",
@@ -70,7 +48,6 @@ const Connexion = async () => {
               <TextField
                 fullWidth
                 type={"password"}
-                onChange={(e) => (pass.current = e.target.value)}
                 placeholder={"Mot de passe"}
                 sx={{
                   background: "#D9D9D9",
@@ -100,7 +77,6 @@ const Connexion = async () => {
                 e.currentTarget.style.background = "#444444";
                 e.currentTarget.style.color = "#E9E9E9";
               }}
-              onClick={onSubmit}
             >
               Se connecter
             </Button>
@@ -124,8 +100,7 @@ const Connexion = async () => {
               opportunités!{" "}
             </Typography>
             <Link href={"/inscription"} passHref>
-              <Button
-                sx={{
+              <Button sx={{
                   background: "#E9E9E9",
                   borderRadius: "20px",
                   padding: " 5px 66px",
@@ -140,24 +115,20 @@ const Connexion = async () => {
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = "#E9E9E9";
                   e.currentTarget.style.color = "#444444";
-                }}
-              >
+                }}>
                 Inscription
               </Button>
             </Link>
           </Grid>
           <Link href={"/inscription"} passHref>
-            <Box
-              sx={{
+            <Box sx={{
                 display: { xs: "flex", md: "none" },
                 alignItems: "center",
                 justifyContent: "center",
                 paddingLeft: 8,
                 marginBottom: 10,
-              }}
-            >
-              {" "}
-              Si vous n'êtes pas encore inscrit <br /> cliquez ci dessous pour
+              }}>
+              Si vous n'êtes pas encore inscrit cliquez ci dessous pour
               vous inscrire
             </Box>
           </Link>
