@@ -1,6 +1,8 @@
 import React from 'react';
 import {Box, Paper, styled, Typography} from "@mui/material";
 import {Header} from "../src/Components/Header";
+import CommandeEnCours from "../src/Components/CommandeEnCours";
+import AnciennesCommandes from "../src/Components/AnciennesCommandes";
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -15,11 +17,10 @@ const Commandes = () => {
         <Box>
             <Header/>
             <Typography variant={'h2'}>En cours</Typography>
-            <Item>hello</Item>
-            <Item>hello</Item>
-            <Item>hello</Item>
-            <Item>hello</Item>
+            <CommandeEnCours/>
             <Typography variant={'h2'}>Anciennes commandes</Typography>
+            <AnciennesCommandes/>
+
         </Box>
     );
 };
