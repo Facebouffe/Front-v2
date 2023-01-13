@@ -1,10 +1,10 @@
 import React from 'react';
 import Box from "@mui/material/Box";
 import {Logo} from "./Logo";
-import {dFlex, displayOnDesktop, flexBetweenCenter} from '../themes/commonThemes';
+import {dFlex} from '../themes/commonThemes';
 import {Container} from "@mui/material";
 import {MenuPages} from "./MenuPages";
-import {ProfileMenu} from "./ProfileMenu";
+import {AccountMenu} from "./AccountMenu";
 
 export const Header = () => {
     return (
@@ -41,7 +41,7 @@ export const Header = () => {
                         justifyContent: "flex-end",
                         flex: 1
                     }}>
-                        <ProfileMenu/>
+                        <AccountMenu/>
                     </Box>
                 </Box>
             </Container>
