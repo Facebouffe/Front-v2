@@ -47,10 +47,16 @@ export const InfoRestaurant = (selectedRestaurant: { image: string ; name: strin
                         display:"flex",
                         alignItems: "center"
                     }}>
-                        <Rating name={"Rating restaurant"}  value={selectedRestaurant.rating} precision={0.5} size={"large"} readOnly/>
-                        <Typography>
-                            {Math.round(selectedRestaurant.rating * 100)/100}
-                        </Typography>
+                        <Box sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            mt: 4,
+                        }}>
+                            <Rating name={"Rating restaurant"} value={selectedRestaurant.rating} precision={0.5} size={"large"} readOnly/>
+                            <Typography>
+                                {Math.round(selectedRestaurant.rating * 100)/100}
+                            </Typography>
+                        </Box>
                     </Box>
                 </Box>
             </Box>
