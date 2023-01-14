@@ -4,11 +4,15 @@ import axios from "axios";
 
 export interface UserState {
     data: {
-        name: string,
-        surname: string,
-        mail: string,
-        phoneNumber: string,
-        address: string,
+        id:string
+        name: string
+        surname: string
+        mail: string
+        date: string
+        phoneNumber: string
+        address: string
+        profile: string
+        mentorCode: string
     }
     pending: boolean,
     error: boolean,
@@ -16,11 +20,15 @@ export interface UserState {
 
 const initialState: UserState = {
     data: {
-        name: "Sheridan",
-        surname: "Shabani",
-        mail: "sheridan.shabani@outlook.fr",
-        phoneNumber: "+33750440990",
-        address: "11 residence des oiseaux, 62530 Hersin-Coupigny, France"
+        id: "",
+        name: "",
+        surname: "",
+        mail: "",
+        phoneNumber: "",
+        address: "",
+        profile: "",
+        mentorCode: "",
+        date: ""
     },
     pending: false,
     error: false,
@@ -30,8 +38,16 @@ export const getUser = createAsyncThunk('user/fetchUser', async (
     userId: string,
     thunkAPI
 ) => {
-    const response = await axios.get(`http://34.140.197.216:80/users/${userId}`)
+    const response = await axios.get(`http://localhost:3000/api/users/${userId}`)
 
+    return response.data
+})
+
+export const updateUser = createAsyncThunk('user/updateUser', async (
+    user: UserState['data'],
+    thunkAPI
+) => {
+    const response = await axios.put(`http://localhost:3000/api/users/${user.id}`, user)
     return response.data
 })
 
@@ -50,6 +66,17 @@ export const userSlice = createSlice({
                 state.data = payload
             })
             .addCase(getUser.rejected, state => {
+                state.pending = false;
+                state.error = true;
+            })
+            .addCase(updateUser.pending, state => {
+                state.pending = true;
+            })
+            .addCase(updateUser.fulfilled, (state, {payload}) => {
+                state.pending = false;
+                state.data = payload
+            })
+            .addCase(updateUser.rejected, state => {
                 state.pending = false;
                 state.error = true;
             })
