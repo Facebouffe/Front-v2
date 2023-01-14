@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import commandes from "../data/commandes.json";
-import {Box, Button, Modal, Paper} from "@mui/material";
+import {Box, Button, Grid, Modal, Paper} from "@mui/material";
 
 const style = {
     position: "absolute" as "absolute",
@@ -33,17 +33,23 @@ const CommandeEnCours = () => {
                     return (
                         <Paper onClick={handleOpen}
                                elevation={4}
-                               sx={{display: 'flex', flexDirection: 'column', padding: 1, marginBottom: 1}}>
-                            <Box sx={{}}>{commande.nom_restaurant}</Box>
-                            <Box sx={{marginBottom: 1}}>Etat de la commande : {commande.etat_commande}</Box>
-                            <Box sx={{marginBottom: 1}}>{commande.plats_commandes}</Box>
-                            <Box sx={{marginBottom: 1}}>{commande.total_commande}</Box>
-                            <Box sx={{marginBottom: 1}}>
-                                {commande.plats_commandes.map((plat) => {
-                                    console.log("commande.plats_commandes" + plat);
-                                    return <li>{plat}</li>;
-                                })}
-                            </Box>
+                               sx={{padding: 3, marginBottom: 3, ml: 5, mr: 5, borderRadius: 12}}>
+                            <Grid sx={{display: 'flex', flexDirection: 'row',justifyContent:'space-between'}}>
+                                <Grid sx={{display: 'flex', flexDirection: 'column'}}>
+                                    <Box sx={{}}>{commande.nom_restaurant}</Box>
+                                    <Box sx={{marginBottom: 1}}>{commande.plats_commandes}</Box>
+                                    <Box sx={{marginBottom: 1}}>{commande.total_commande} €</Box>
+                                </Grid>
+                                <Grid sx={{display: 'flex', flexDirection: 'column', }}>
+                                    <Box sx={{marginBottom: 1}}>Etat de la commande : {commande.etat_commande}</Box>
+                                    <Box sx={{marginBottom: 1}}>
+                                        {commande.plats_commandes.map((plat) => {
+                                            console.log("commande.plats_commandes" + plat);
+                                            return <li>{plat}</li>;
+                                        })}
+                                    </Box>
+                                </Grid>
+                            </Grid>
                             <Box>
                                 Cliquez pour afficher la totalité de la commande
                                 <Modal

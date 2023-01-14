@@ -16,9 +16,9 @@ const Commandes = () => {
     return (
         <Box>
             <Header/>
-            <Typography variant={'h2'}>En cours</Typography>
+            <Typography sx={{ml:4}} variant={'h2'}>En cours</Typography>
             <CommandeEnCours/>
-            <Typography variant={'h2'}>Anciennes commandes</Typography>
+            <Typography sx={{ml:4}} variant={'h2'}>Anciennes commandes</Typography>
             <AnciennesCommandes/>
 
         </Box>
