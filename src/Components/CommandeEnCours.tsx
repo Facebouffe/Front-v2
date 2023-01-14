@@ -1,76 +1,65 @@
 import React, {useState} from 'react';
 import commandes from "../data/commandes.json";
-import {Box, Button, Grid, Modal, Paper} from "@mui/material";
-
-const style = {
-    position: "absolute" as "absolute",
-    top: "40%",
-    left: {xs:'19%',md:"30%"},
-    transform: "translate (-50%, -50%)",
-    width: {xs:250,md:600},
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 20,
-    pt: 2,
-    px: 4,
-    pb: 3,
-};
+import {Accordion, AccordionDetails, AccordionSummary, Box, Grid, Paper, Typography} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 
 const CommandeEnCours = () => {
-    const [open, setOpen] = useState(false);
+    const [expanded, setExpanded] = useState<string | false>(false);
 
-    const handleOpen = () => {
-        setOpen(true);
-    };
-    const handleClose = () => {
-        setOpen(false);
-    };
+    const handleChange =
+        (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+            setExpanded(isExpanded ? panel : false);
+        };
     return (
         <Box sx={{display: 'flex', flexDirection: 'column', padding: 1}}>
             {commandes.map(commande => {
                 if (commande.etat_commande === 'en cours de livraison') {
                     return (
-                        <Paper onClick={handleOpen}
-                               elevation={4}
-                               sx={{padding: 3, marginBottom: 3, ml: 5, mr: 5, borderRadius: 12}}>
-                            <Grid sx={{display: 'flex', flexDirection: 'row',justifyContent:'space-between'}}>
+                        //rjt un spacebetween
+                        <Paper
+                            elevation={4}
+                            sx={{padding: 3, marginBottom: 3, ml: 5, mr: 5, borderRadius: 12}}>
+                            <Grid sx={{display: 'flex', flexDirection: {xs: 'column', md: 'row'},
+                                justifyContent: {xs: 'none', md: 'space-between'}}}>
                                 <Grid sx={{display: 'flex', flexDirection: 'column'}}>
-                                    <Box sx={{}}>{commande.nom_restaurant}</Box>
+                                    <Box sx={{marginBottom: 1}}>{commande.nom_restaurant}</Box>
                                     <Box sx={{marginBottom: 1}}>{commande.plats_commandes}</Box>
                                     <Box sx={{marginBottom: 1}}>{commande.total_commande} €</Box>
                                 </Grid>
-                                <Grid sx={{display: 'flex', flexDirection: 'column', }}>
+                                <Box>
+                                    <Accordion expanded={expanded === commande.id} onChange={handleChange(commande.id)}>
+                                        <AccordionSummary expandIcon={<ExpandMoreIcon/>}
+                                                          id={commande.id}
+                                                          sx={{marginBottom: 1}}
+                                        >
+                                            <Typography
+                                                sx={{
+                                                    display: "flex",
+                                                    flexDirection: "column",
+                                                    width: '33%',
+                                                    flexShrink: 0
+                                                }}
+                                            >
+                                                Détails de la commande
+                                            </Typography>
+                                            <Typography sx={{color: 'text.secondary'}}>Cliquez pour
+                                                consulter</Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                            <Typography sx={{display: "flex", flexDirection: "column"}}>
+                                                {commande.plats_commandes.map((plat) => {
+                                                    return <li>{plat}</li>;
+                                                })}
+                                            </Typography>
+                                        </AccordionDetails>
+                                    </Accordion>
+                                </Box>
+                                <Grid sx={{display: 'flex', flexDirection: 'column',}}>
                                     <Box sx={{marginBottom: 1}}>Etat de la commande : {commande.etat_commande}</Box>
-                                    <Box sx={{marginBottom: 1}}>
-                                        {commande.plats_commandes.map((plat) => {
-                                            console.log("commande.plats_commandes" + plat);
-                                            return <li>{plat}</li>;
-                                        })}
-                                    </Box>
+
                                 </Grid>
                             </Grid>
-                            <Box>
-                                Cliquez pour afficher la totalité de la commande
-                                <Modal
-                                    open={open}
-                                    hideBackdrop
-                                    onClose={handleClose}
-                                    sx={{marginBottom: 1}}
-                                >
-                                    <Box
-                                        sx={{display: "flex", flexDirection: "column", ...style}}
-                                    >
-                                        La commandes passées est:
-                                        <Box sx={{display: "flex", flexDirection: "column"}}>
-                                            {commande.plats_commandes.map((plat) => {
-                                                return <li>{plat}</li>;
-                                            })}
-                                        </Box>
-                                        <Button onClick={handleClose}>Fermer</Button>
-                                    </Box>
-                                </Modal>
-                            </Box>
                         </Paper>)
                 }
             })}

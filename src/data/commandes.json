@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "nom_restaurant": "Chez Paul",
     "total_commande": 20.50,
     "plats_commandes": [
@@ -9,6 +10,7 @@
     "etat_commande": "livré"
   },
   {
+    "id": "2",
     "nom_restaurant": "Pizzeria Napoli",
     "total_commande": 30.00,
     "plats_commandes": [
@@ -19,6 +21,7 @@
     "etat_commande": "en cours de livraison"
   },
   {
+    "id": "3",
     "nom_restaurant": "La Cantina",
     "total_commande": 15.75,
     "plats_commandes": [
@@ -28,6 +31,7 @@
     "etat_commande": "livré"
   },
   {
+    "id": "4",
     "nom_restaurant": "L'Asiatique",
     "total_commande": 25.00,
     "plats_commandes": [
@@ -38,6 +42,7 @@
     "etat_commande": "en cours de livraison"
   },
   {
+    "id": "5",
     "nom_restaurant": "Le Bistrot",
     "total_commande": 18.00,
     "plats_commandes": [
@@ -47,6 +52,7 @@
     "etat_commande": "livré"
   },
   {
+    "id": "6",
     "nom_restaurant": "Fish & Chips",
     "total_commande": 12.50,
     "plats_commandes": [
@@ -56,6 +62,7 @@
     "etat_commande": "en cours de livraison"
   },
   {
+    "id": "7",
     "nom_restaurant": "Le Jardin",
     "total_commande": 40.00,
     "plats_commandes": [
@@ -66,6 +73,7 @@
     "etat_commande": "livré"
   },
   {
+    "id": "8",
     "nom_restaurant": "Le buffet",
     "total_commande": 15.00,
     "plats_commandes": [
@@ -76,6 +84,7 @@
     "etat_commande": "en cours de livraison"
   },
   {
+    "id": "9",
     "nom_restaurant": "La Trattoria",
     "total_commande": 22.50,
     "plats_commandes": [
@@ -85,6 +94,7 @@
     "etat_commande": "livré"
   },
   {
+    "id": "10",
     "nom_restaurant": "Le Comptoir",
     "total_commande": 35.00,
     "plats_commandes": [
