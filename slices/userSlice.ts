@@ -1,43 +1,61 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 import {RootState} from "../store";
+import axios from "axios";
 
 export interface UserState {
-    name: string,
-    surname: string,
-    mail: string,
-    phoneNumber: string,
-    address: string,
+    data: {
+        name: string,
+        surname: string,
+        mail: string,
+        phoneNumber: string,
+        address: string,
+    }
+    pending: boolean,
+    error: boolean,
 }
 
 const initialState: UserState = {
-    name: "Sheridan",
-    surname: "Shabani",
-    mail: "sheridan.shabani@outlook.fr",
-    phoneNumber: "+33750440990",
-    address: "11 residence des oiseaux, 62530 Hersin-Coupigny, France"
+    data: {
+        name: "Sheridan",
+        surname: "Shabani",
+        mail: "sheridan.shabani@outlook.fr",
+        phoneNumber: "+33750440990",
+        address: "11 residence des oiseaux, 62530 Hersin-Coupigny, France"
+    },
+    pending: false,
+    error: false,
 }
+
+export const getUser = createAsyncThunk('user/fetchUser', async (
+    userId: string,
+    thunkAPI
+) => {
+    const response = await axios.get(`http://34.140.197.216:80/users/${userId}`)
+
+    return response.data
+})
 
 export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        updateAddress: (state, action: PayloadAction<string>) => {
-            state.address = action.payload;
-        },
-        updatePhoneNumber: (state, action: PayloadAction<string>) => {
-            state.phoneNumber = action.payload;
-        },
     },
+    extraReducers: builder => {
+        builder
+            .addCase(getUser.pending, state => {
+                state.pending = true;
+            })
+            .addCase(getUser.fulfilled, (state, {payload}) => {
+                state.pending = false;
+                state.data = payload
+            })
+            .addCase(getUser.rejected, state => {
+                state.pending = false;
+                state.error = true;
+            })
+    }
 })
 
-// Action creators are generated for each case reducer function
-export const { updateAddress, updatePhoneNumber } = userSlice.actions
-
-export const selectName = (state: RootState) => state.user.name
-export const selectSurname = (state: RootState) => state.user.surname
-export const selectMail = (state: RootState) => state.user.mail
-export const selectPhoneNumber = (state: RootState) => state.user.phoneNumber
-export const selectAddress = (state: RootState) => state.user.address
+export const selectUser = (state: RootState) => state.user
 
 export default userSlice.reducer
