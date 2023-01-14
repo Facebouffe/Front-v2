@@ -3,6 +3,7 @@ import {Box, Paper, styled, Typography} from "@mui/material";
 import {Header} from "../src/Components/Header";
 import CommandeEnCours from "../src/Components/CommandeEnCours";
 import AnciennesCommandes from "../src/Components/AnciennesCommandes";
+import {fontFamily} from "@mui/system";
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -16,9 +17,9 @@ const Commandes = () => {
     return (
         <Box>
             <Header/>
-            <Typography sx={{ml:4}} variant={'h2'}>En cours</Typography>
+            <Typography sx={{fontSize: {xs: 40, md: 70}}} variant={'h2'}>En cours</Typography>
             <CommandeEnCours/>
-            <Typography sx={{ml:4}} variant={'h2'}>Anciennes commandes</Typography>
+            <Typography sx={{fontSize: {xs: 40, md: 70}}} variant={'h2'}>Anciennes commandes</Typography>
             <AnciennesCommandes/>
 
         </Box>

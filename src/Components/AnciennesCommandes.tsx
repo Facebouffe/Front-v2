@@ -35,15 +35,15 @@ const AnciennesCommandes = () => {
                             }}>
                                 <Grid sx={{display: 'flex', flexDirection: 'column'}}>
                                     <Box sx={{marginBottom: 1}}>{commande.nom_restaurant}</Box>
-                                    <Box sx={{marginBottom: 1}}>{commande.plats_commandes}</Box>
-                                    <Box sx={{marginBottom: 1}}>{commande.total_commande} €</Box>
+                                    <Box sx={{marginBottom: 1}}>Prix :  {commande.total_commande} €</Box>
                                 </Grid>
                                 <Grid>
                                     <Accordion expanded={expanded === commande.id} onChange={handleChange(commande.id)}>
                                         <AccordionSummary expandIcon={<ExpandMoreIcon/>}
                                                           id={commande.id}
-                                                          sx={{marginBottom: 1}}
+                                                           sx={{marginBottom: 1}}
                                         >
+                                            <Grid sx={{display:{xs:'flex',md:'flex'},flexDirection:{xs:'column',md:'row'}}}>
                                             <Typography
                                                 sx={{
                                                     display: "flex",
@@ -55,7 +55,9 @@ const AnciennesCommandes = () => {
                                                 Détails de la commande
                                             </Typography>
                                             <Typography sx={{color: 'text.secondary'}}>Cliquez pour
-                                                consulter</Typography>
+                                                consulter
+                                            </Typography>
+                                            </Grid>
                                         </AccordionSummary>
                                         <AccordionDetails>
                                             <Typography sx={{display: "flex", flexDirection: "column"}}>

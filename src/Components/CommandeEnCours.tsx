@@ -16,35 +16,45 @@ const CommandeEnCours = () => {
             {commandes.map(commande => {
                 if (commande.etat_commande === 'en cours de livraison') {
                     return (
-                        //rjt un spacebetween
                         <Paper
                             elevation={4}
                             sx={{padding: 3, marginBottom: 3, ml: 5, mr: 5, borderRadius: 12}}>
-                            <Grid sx={{display: 'flex', flexDirection: {xs: 'column', md: 'row'},
-                                justifyContent: {xs: 'none', md: 'space-between'}}}>
+                            <Grid sx={{
+                                display: 'flex', flexDirection: {xs: 'column', md: 'row'},
+                                justifyContent: {xs: 'none', md: 'space-between'}
+                            }}>
                                 <Grid sx={{display: 'flex', flexDirection: 'column'}}>
                                     <Box sx={{marginBottom: 1}}>{commande.nom_restaurant}</Box>
-                                    <Box sx={{marginBottom: 1}}>{commande.plats_commandes}</Box>
-                                    <Box sx={{marginBottom: 1}}>{commande.total_commande} €</Box>
+                                    <Box sx={{marginBottom: 1}}>Prix : {commande.total_commande} €</Box>
                                 </Grid>
-                                <Box>
+                                <Grid sx={{
+                                    display: 'flex', flexDirection: 'row',
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
+                                }}>
                                     <Accordion expanded={expanded === commande.id} onChange={handleChange(commande.id)}>
                                         <AccordionSummary expandIcon={<ExpandMoreIcon/>}
                                                           id={commande.id}
                                                           sx={{marginBottom: 1}}
                                         >
-                                            <Typography
-                                                sx={{
-                                                    display: "flex",
-                                                    flexDirection: "column",
-                                                    width: '33%',
-                                                    flexShrink: 0
-                                                }}
-                                            >
-                                                Détails de la commande
-                                            </Typography>
-                                            <Typography sx={{color: 'text.secondary'}}>Cliquez pour
-                                                consulter</Typography>
+                                            <Grid sx={{
+                                                display: {xs: 'flex', md: 'flex'},
+                                                flexDirection: {xs: 'column', md: 'row'}
+                                            }}>
+                                                <Typography
+                                                    sx={{
+                                                        display: "flex",
+                                                        flexDirection: "column",
+                                                        width: '33%',
+                                                        flexShrink: 0
+                                                    }}
+                                                >
+                                                    Détails de la commande
+                                                </Typography>
+
+                                                <Typography sx={{color: 'text.secondary'}}>Cliquez pour
+                                                    consulter</Typography>
+                                            </Grid>
                                         </AccordionSummary>
                                         <AccordionDetails>
                                             <Typography sx={{display: "flex", flexDirection: "column"}}>
@@ -54,7 +64,7 @@ const CommandeEnCours = () => {
                                             </Typography>
                                         </AccordionDetails>
                                     </Accordion>
-                                </Box>
+                                </Grid>
                                 <Grid sx={{display: 'flex', flexDirection: 'column',}}>
                                     <Box sx={{marginBottom: 1}}>Etat de la commande : {commande.etat_commande}</Box>
 
