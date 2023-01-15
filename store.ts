@@ -4,10 +4,12 @@ import {
     ThunkAction,
 } from '@reduxjs/toolkit';
 import userReducer from "./slices/userSlice"
+import restaurantReducer from "./slices/restaurantSlice"
 
 export const store = configureStore({
     reducer: {
         user: userReducer,
+        restaurant: restaurantReducer,
     },
 })
 
