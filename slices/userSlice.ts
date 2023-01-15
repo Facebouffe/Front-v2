@@ -4,7 +4,7 @@ import axios from "axios";
 
 export interface UserState {
     data: {
-        id:string
+        id: string
         name: string
         surname: string
         mail: string
@@ -38,7 +38,7 @@ export const getUser = createAsyncThunk('user/fetchUser', async (
     userId: string,
     thunkAPI
 ) => {
-    const response = await axios.get(`http://localhost:3000/api/users/${userId}`)
+    const response = await axios.get(`http://localhost:3000/api/user/${userId}`)
 
     return response.data
 })
@@ -47,15 +47,14 @@ export const updateUser = createAsyncThunk('user/updateUser', async (
     user: UserState['data'],
     thunkAPI
 ) => {
-    const response = await axios.put(`http://localhost:3000/api/users/${user.id}`, user)
+    const response = await axios.put(`http://localhost:3000/api/user/${user.id}`, user)
     return response.data
 })
 
 export const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers: {
-    },
+    reducers: {},
     extraReducers: builder => {
         builder
             .addCase(getUser.pending, state => {
