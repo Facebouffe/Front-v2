@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Accordion, AccordionDetails, AccordionSummary, Box, Grid, Paper, Typography} from "@mui/material";
+import {Accordion, AccordionDetails, AccordionSummary, Box, Divider, Grid, Paper, Typography} from "@mui/material";
 import commandes from "../data/commandes.json";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
@@ -24,8 +24,8 @@ const AnciennesCommandes = () => {
                                 flexDirection: 'column',
                                 padding: 3,
                                 marginBottom: 3,
-                                ml: 5,
-                                mr: 5,
+                                ml: {xs:5,md:25},
+                                mr: {xs:5,md:25},
                                 borderRadius: 12
                             }}>
                             <Grid sx={{
@@ -34,7 +34,7 @@ const AnciennesCommandes = () => {
                                 justifyContent: {xs: 'none', md: 'space-between'}
                             }}>
                                 <Grid sx={{display: 'flex', flexDirection: 'column'}}>
-                                    <Box sx={{marginBottom: 1}}>{commande.nom_restaurant}</Box>
+                                    <Typography variant={'h5'} sx={{marginBottom: 1}}>{commande.nom_restaurant}</Typography>
                                     <Box sx={{marginBottom: 1}}>Prix :  {commande.total_commande} €</Box>
                                 </Grid>
                                 <Grid>
@@ -68,7 +68,8 @@ const AnciennesCommandes = () => {
                                         </AccordionDetails>
                                     </Accordion>
                                 </Grid>
-                                <Grid sx={{display: 'flex', flexDirection: 'column',}}>
+                                <Divider orientation="vertical" flexItem />
+                                <Grid sx={{display: 'flex', flexDirection: 'column'}}>
                                     <Box sx={{marginBottom: 1}}>Etat de la commande : {commande.etat_commande}</Box>
                                 </Grid>
                             </Grid>

@@ -18,13 +18,13 @@ const CommandeEnCours = () => {
                     return (
                         <Paper
                             elevation={4}
-                            sx={{padding: 3, marginBottom: 3, ml: 5, mr: 5, borderRadius: 12}}>
+                            sx={{padding: 3, marginBottom: 3,ml: {xs:5,md:25},mr: {xs:5,md:25}, borderRadius: 12}}>
                             <Grid sx={{
                                 display: 'flex', flexDirection: {xs: 'column', md: 'row'},
                                 justifyContent: {xs: 'none', md: 'space-between'}
                             }}>
                                 <Grid sx={{display: 'flex', flexDirection: 'column'}}>
-                                    <Box sx={{marginBottom: 1}}>{commande.nom_restaurant}</Box>
+                                    <Typography variant={'h5'}  sx={{marginBottom: 1}}>{commande.nom_restaurant}</Typography>
                                     <Box sx={{marginBottom: 1}}>Prix : {commande.total_commande} €</Box>
                                 </Grid>
                                 <Grid sx={{
