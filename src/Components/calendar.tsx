@@ -1,5 +1,4 @@
 import React from 'react';
-import {Box} from "@mui/system";
 import {Dayjs} from "dayjs";
 import {LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
