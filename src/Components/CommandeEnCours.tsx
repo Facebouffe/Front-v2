@@ -26,6 +26,7 @@ const CommandeEnCours = () => {
                                 <Grid sx={{display: 'flex', flexDirection: 'column'}}>
                                     <Typography variant={'h5'}  sx={{marginBottom: 1}}>{commande.nom_restaurant}</Typography>
                                     <Box sx={{marginBottom: 1}}>Prix : {commande.total_commande} €</Box>
+                                    <Box  sx={{marginBottom: 1}}>Date :  {commande.date}</Box>
                                 </Grid>
                                 <Grid sx={{
                                     display: 'flex', flexDirection: 'row',
