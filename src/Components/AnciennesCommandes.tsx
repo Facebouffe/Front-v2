@@ -38,6 +38,7 @@ const AnciennesCommandes = () => {
                                     <Box sx={{marginBottom: 1}}>Prix :  {commande.total_commande} €</Box>
                                     <Box  sx={{marginBottom: 1}}>Date :  {commande.date}</Box>
                                 </Grid>
+                                <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>
                                 <Grid>
                                     <Accordion expanded={expanded === commande.id} onChange={handleChange(commande.id)}>
                                         <AccordionSummary expandIcon={<ExpandMoreIcon/>}
@@ -69,8 +70,7 @@ const AnciennesCommandes = () => {
                                         </AccordionDetails>
                                     </Accordion>
                                 </Grid>
-                                <Divider orientation="vertical" flexItem />
-                                <Grid sx={{display: 'flex', flexDirection: 'column'}}>
+                                <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>                                <Grid sx={{display: 'flex', flexDirection: 'column'}}>
                                     <Box sx={{marginBottom: 1}}>Etat de la commande : {commande.etat_commande}</Box>
                                 </Grid>
                             </Grid>

@@ -3,6 +3,7 @@ import {LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import {DatePicker} from "@mui/x-date-pickers/DatePicker";
 import {Grid, TextField, Typography} from "@mui/material";
+import FilterDate from "./FilterDate";
 
 const Calendar = () => {
     const [value, setValue] = useState<number | null>(null);
@@ -13,7 +14,7 @@ const Calendar = () => {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <Typography variant={'h6'} sx={{mr: 4, mt: 1}}> Filtrer par date </Typography>
                 <DatePicker
-                    views={['year']}
+                    views={['year','month']}
                     label="Anneé"
                     value={value}
                     onChange={(newValue) => {
@@ -21,6 +22,7 @@ const Calendar = () => {
                     }}
                     renderInput={(params) => <TextField {...params} />}
                 />
+                {/*<FilterDate/>*/}
             </LocalizationProvider>
         </Grid>
 

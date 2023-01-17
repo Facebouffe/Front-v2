@@ -1,11 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import commandes from "../data/commandes.json";
-import {Accordion, AccordionDetails, AccordionSummary, Box, Grid, Paper, Typography} from "@mui/material";
+import {Accordion, AccordionDetails, AccordionSummary, Box, Divider, Grid, Paper, Typography} from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 
 const CommandeEnCours = () => {
     const [expanded, setExpanded] = useState<string | false>(false);
+    const [lesCommandes, setLesCommandes] = useState([]);
+
+
 
     const handleChange =
         (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
@@ -28,6 +31,7 @@ const CommandeEnCours = () => {
                                     <Box sx={{marginBottom: 1}}>Prix : {commande.total_commande} €</Box>
                                     <Box  sx={{marginBottom: 1}}>Date :  {commande.date}</Box>
                                 </Grid>
+                                <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>
                                 <Grid sx={{
                                     display: 'flex', flexDirection: 'row',
                                     alignItems: 'center',
@@ -58,6 +62,7 @@ const CommandeEnCours = () => {
                                             </Grid>
                                         </AccordionSummary>
                                         <AccordionDetails>
+                                            <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>
                                             <Typography sx={{display: "flex", flexDirection: "column"}}>
                                                 {commande.plats_commandes.map((plat) => {
                                                     return <li>{plat}</li>;
@@ -65,6 +70,7 @@ const CommandeEnCours = () => {
                                             </Typography>
                                         </AccordionDetails>
                                     </Accordion>
+                                    <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>
                                 </Grid>
                                 <Grid sx={{display: 'flex', flexDirection: 'column',}}>
                                     <Box sx={{marginBottom: 1}}>Etat de la commande : {commande.etat_commande}</Box>
