@@ -9,11 +9,13 @@ import {Logo} from "../src/Components/Logo";
 import {useFormik} from "formik";
 import * as yup from 'yup';
 
+import { signIn } from "next-auth/react"
+
 const validationSchema = yup.object({
     email: yup
-        .string()
-        .email('Entrer votre adresse mail')
-        .required('Email requis'),
+            .string()
+            .email('Entrer votre adresse mail')
+            .required('Email requis'),
     password: yup
             .string()
             .min(8, 'Le mot de passe doit comporter plus de 8 caractère')
@@ -27,8 +29,9 @@ const Connexion = () => {
             password: 'foobar',
         },
         validationSchema: validationSchema,
-        onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
+        onSubmit: async (values) => {
+            //alert(JSON.stringify(values, null, 2));
+            await signIn()
         },
     });
 
