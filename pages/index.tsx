@@ -23,8 +23,7 @@ export default function Home() {
             display: "flex",
             flexDirection: "column",
             height: "100vh",
-          }}
-        >
+          }}>
           <Box>
             <Header />
             <FilterTab />
@@ -33,8 +32,7 @@ export default function Home() {
               sx={{
                 mb: 3,
                 mt: 5,
-              }}
-            >
+              }}>
               <RestaurantCard />
             </Container>
           </Box>
