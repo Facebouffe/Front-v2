@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {LocalizationProvider} from "@mui/x-date-pickers";
+import {frFR, LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import {DatePicker} from "@mui/x-date-pickers/DatePicker";
 import {Grid, TextField, Typography} from "@mui/material";
-import FilterDate from "./FilterDate";
+import 'dayjs/locale/fr';
+
 
 const Calendar = () => {
     const [value, setValue] = useState<number | null>(null);
@@ -11,10 +12,12 @@ const Calendar = () => {
     return (
 
         <Grid sx={{display: 'flex', justifyContent: 'flex-end', mt: 5, mr: 5}}>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <Typography variant={'h6'} sx={{mr: 4, mt: 1}}> Filtrer par date </Typography>
+            <LocalizationProvider dateAdapter={AdapterDayjs}  adapterLocale="fr"
+                                  localeText={frFR.components.MuiLocalizationProvider.defaultProps.localeText}
+            >
+                <Typography variant={'h6'} sx={{mr: 4, ml: 2}}> Filtrer par date </Typography>
                 <DatePicker
-                    views={['year','month']}
+                    views={['year', 'month']}
                     label="Anneé"
                     value={value}
                     onChange={(newValue) => {

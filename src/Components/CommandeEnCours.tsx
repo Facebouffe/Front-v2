@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import commandes from "../data/commandes.json";
 import {Accordion, AccordionDetails, AccordionSummary, Box, Divider, Grid, Paper, Typography} from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -62,7 +62,8 @@ const CommandeEnCours = () => {
                                             </Grid>
                                         </AccordionSummary>
                                         <AccordionDetails>
-                                            <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>
+                                            <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical"
+                                                     flexItem/>
                                             <Typography sx={{display: "flex", flexDirection: "column"}}>
                                                 {commande.plats_commandes.map((plat) => {
                                                     return <li>{plat}</li>;
@@ -70,10 +71,10 @@ const CommandeEnCours = () => {
                                             </Typography>
                                         </AccordionDetails>
                                     </Accordion>
-                                    <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>
                                 </Grid>
+                                <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>
                                 <Grid sx={{display: 'flex', flexDirection: 'column',}}>
-                                    <Box sx={{marginBottom: 1}}>Etat de la commande : {commande.etat_commande}</Box>
+                                    <Box sx={{marginBottom: 1,mr:7,mt:4,fontWeight:'bold'}}> {commande.etat_commande}</Box>
 
                                 </Grid>
                             </Grid>

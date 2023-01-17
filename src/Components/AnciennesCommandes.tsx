@@ -71,7 +71,7 @@ const AnciennesCommandes = () => {
                                     </Accordion>
                                 </Grid>
                                 <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>                                <Grid sx={{display: 'flex', flexDirection: 'column'}}>
-                                    <Box sx={{marginBottom: 1}}>Etat de la commande : {commande.etat_commande}</Box>
+                                    <Box sx={{mr:7,mt:4,fontWeight:'bold'}}> {commande.etat_commande}</Box>
                                 </Grid>
                             </Grid>
                         </Paper>)
