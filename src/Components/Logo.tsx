@@ -2,8 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import {displayOnDesktop, flexCenter} from "../themes/commonThemes";
-import {SvgIcon, SvgIconProps} from "@mui/material";
-import {CiFacebook} from "react-icons/Ci";
+//import {CiFacebook} from "react-icons/Ci";
 import {common} from "@mui/material/colors";
 
 export const Logo = (
@@ -13,7 +12,7 @@ export const Logo = (
             alignItems: 'center',
             display: 'flex',
         }}>
-            <CiFacebook size={40} color={common["white"]}/>
+            {//<CiFacebook size={40} color={common["white"]}/>}
             <Typography sx={{
                 ml: 1,
                 color: common["black"],
