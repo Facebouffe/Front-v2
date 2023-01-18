@@ -38,7 +38,7 @@ export const getUser = createAsyncThunk('user/fetchUser', async (
     userId: string,
     thunkAPI
 ) => {
-    const response = await axios.get(`http://localhost:3000/api/user/${userId}`)
+    const response = await axios.get(`http://34.140.97.216:80/users/${userId}`)
 
     return response.data
 })
