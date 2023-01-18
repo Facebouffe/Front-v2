@@ -1,4 +1,4 @@
-import {GiHearts, GiFrenchFries,GiHamburger,GiFullPizza, GiSushis, GiDonerKebab, GiChickenLeg, GiSteak, GiCurledLeaf} from "react-icons/Gi"
+import {GiHearts, GiFrenchFries,GiHamburger,GiFullPizza, GiSushis, GiDonerKebab, GiChickenLeg, GiSteak, GiCurledLeaf} from "react-icons/all"
 
 export const filterData = [
     { id: 1, label: 'Friterie', icon: <GiFrenchFries size={24}/>},

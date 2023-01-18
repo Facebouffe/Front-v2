@@ -5,7 +5,7 @@ import {Restaurants} from "../data/filter-data"
 import Typography from "@mui/material/Typography";
 import {Paper} from "@mui/material";
 import Grid from "@mui/material/Grid";
-import {IoAdd} from "react-icons/io5";
+import {IoAdd} from "react-icons/all";
 import Button from "@mui/material/Button";
 
 export const MenuRestaurant = ( ) => {
