@@ -16,10 +16,11 @@ const CommandeEnCours = () => {
         };
     return (
         <Box sx={{display: 'flex', flexDirection: 'column', padding: 1}}>
-            {commandes.map(commande => {
+            {commandes.map((commande, index) => {
                 if (commande.etat_commande === 'en cours de livraison') {
                     return (
                         <Paper
+                            key={index}
                             elevation={4}
                             sx={{padding: 3, marginBottom: 3,ml: {xs:5,md:25},mr: {xs:5,md:25}, borderRadius: 12}}>
                             <Grid sx={{

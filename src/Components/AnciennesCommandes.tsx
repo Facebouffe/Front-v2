@@ -14,10 +14,11 @@ const AnciennesCommandes = () => {
 
     return (
         <Box sx={{display: 'flex', flexDirection: 'column', padding: 1}}>
-            {commandes.map(commande => {
+            {commandes.map((commande, index) => {
                 if (commande.etat_commande === 'livré') {
                     return (
                         <Paper
+                            key={index}
                             elevation={4}
                             sx={{
                                 display: 'flex',
