@@ -31,7 +31,14 @@ const Connexion = () => {
         validationSchema: validationSchema,
         onSubmit: async (values) => {
             //alert(JSON.stringify(values, null, 2));
-            await signIn()
+            console.log(values.email)
+            console.log(values.password)
+            await signIn("credentials", {
+                email: values.email,
+                password: values.password,
+                redirect: true,
+                callbackUrl: "/"
+            })
         },
     });
 

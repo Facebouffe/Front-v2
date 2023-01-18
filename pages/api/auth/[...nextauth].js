@@ -23,6 +23,7 @@ export default NextAuth({
                     const errorMessage = e.response.data.message
                     // Redirecting to the login page with error messsage in the URL
                     throw new Error(errorMessage)
+                    //await new Promise(resolve => setTimeout(resolve, 300000));
                 }
             },
         }),
