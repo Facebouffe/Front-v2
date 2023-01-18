@@ -17,6 +17,7 @@ const randomRating = () => Math.random() * 5;
 export const Restaurants = [
     {
         id: 1,
+        comment:"nul",
         name: "Chez Marie",
         rating: randomRating(),
         address: "123 Rue de la Paix, Paris, France",
@@ -98,6 +99,7 @@ export const Restaurants = [
     },
     {
         id: 2,
+        comment:"nul2",
         name: "Le Bistrot",
         rating: randomRating(),
         address: "456 Avenue du Général de Gaulle, Lyon, France",
@@ -161,6 +163,7 @@ export const Restaurants = [
     },
     {
         id: 3,
+        comment:"nul3",
         name: "La Trattoria",
         rating: randomRating(),
         address: "789 Via Roma, Rome, Italie",
@@ -260,6 +263,7 @@ export const Restaurants = [
     },
     {
         id: 4,
+        comment:"nul4",
         name: "Chez Marie",
         rating: randomRating(),
         address: "123 Rue de la Paix, Paris, France",
@@ -314,6 +318,7 @@ export const Restaurants = [
     },
     {
         id: 6,
+        comment:"nul5",
         name: "La Trattoria",
         rating: randomRating(),
         address: "789 Via Roma, Rome, Italie",
@@ -341,6 +346,7 @@ export const Restaurants = [
     },
     {
         id: 7,
+        comment:"nul7",
         name: "Chez Marie",
         rating: randomRating(),
         address: "123 Rue de la Paix, Paris, France",
@@ -368,6 +374,7 @@ export const Restaurants = [
     },
     {
         id: 8,
+        comment:"nul8",
         name: "Le Bistrot",
         rating: randomRating(),
         address: "456 Avenue du Général de Gaulle, Lyon, France",
@@ -395,6 +402,7 @@ export const Restaurants = [
     },
     {
         id: 9,
+        comment:"nul10",
         name: "La Trattoria",
         rating: randomRating(),
         address: "789 Via Roma, Rome, Italie",

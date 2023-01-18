@@ -7,6 +7,8 @@ import Button from "@mui/material/Button";
 import {ButtonGroup, Paper} from "@mui/material";
 import Link from "next/link";
 import Router from "next/router";
+import {router} from "next/client";
+import comment from "../../pages/comment";
 
 function handleClickMenu(id: any) {
     Router.push(`/Restaurants/${id}`).then(r => true)
@@ -58,7 +60,7 @@ export const RestaurantCard = () => {
                                 <Box>
                                     <ButtonGroup>
                                         <Button>J'aime</Button>
-                                        <Button>Commentaires</Button>
+                                        <Button >Commentaire</Button>
                                         <Button onClick={() => handleClickMenu(restaurant.id)}>Commander</Button>
                                     </ButtonGroup>
                                     </Box>
