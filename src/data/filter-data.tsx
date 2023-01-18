@@ -1,3 +1,4 @@
+//@ts-ignore
 import {GiHearts, GiFrenchFries,GiHamburger,GiFullPizza, GiSushis, GiDonerKebab, GiChickenLeg, GiSteak, GiCurledLeaf} from "react-icons/Gi"
 
 export const filterData = [

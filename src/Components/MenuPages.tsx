@@ -1,5 +1,6 @@
 import React from "react";
 import {Divider, Stack} from "@mui/material";
+//@ts-ignore
 import {IoHomeOutline, IoRestaurantOutline} from "react-icons/io5";
 import {common} from "@mui/material/colors";
 import Button from "@mui/material/Button";
