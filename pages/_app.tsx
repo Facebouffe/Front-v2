@@ -9,7 +9,6 @@ import createEmotionCache from "../src/createEmotionCache";
 
 import { store } from '../store'
 import { Provider } from 'react-redux'
-import {Bottom} from "../src/Components/Bottom";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -31,7 +30,7 @@ export default function MyApp(props: MyAppProps) {
               <CssBaseline />
               <Component {...pageProps} />
             </ThemeProvider>
-              <Bottom/>
+
           </CacheProvider>
       </Provider>
   );
