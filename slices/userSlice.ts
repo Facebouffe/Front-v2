@@ -20,15 +20,15 @@ export interface UserState {
 
 const initialState: UserState = {
     data: {
-        id: "",
-        name: "",
-        surname: "",
-        mail: "",
-        phoneNumber: "",
-        address: "",
-        profile: "",
-        mentorCode: "",
-        date: ""
+        id: "818eaaea-7e91-4c98-8b11-d29411ae21fc",
+        name: "test",
+        surname: "test",
+        mail: "test@gmail.com",
+        password: "testpass0",
+        date: "10/01/2023",
+        phoneNumber: "+3375044045",
+        address: "10 rue de la fête",
+        profile: "client"
     },
     pending: false,
     error: false,
@@ -38,7 +38,7 @@ export const getUser = createAsyncThunk('user/fetchUser', async (
     userId: string,
     thunkAPI
 ) => {
-    const response = await axios.get(`http://34.140.97.216:80/users/${userId}`)
+    const response = await axios.get(`http://34.140.97.216:80/users/id/${userId}`)
 
     return response.data
 })
@@ -47,7 +47,7 @@ export const updateUser = createAsyncThunk('user/updateUser', async (
     user: UserState['data'],
     thunkAPI
 ) => {
-    const response = await axios.put(`http://localhost:3000/api/user/${user.id}`, user)
+    const response = await axios.put(`http://34.140.97.216:80/users/id/${user.id}`, user)
     return response.data
 })
 
