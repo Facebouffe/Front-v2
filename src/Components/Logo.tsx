@@ -12,7 +12,8 @@ export const Logo = (
             alignItems: 'center',
             display: 'flex',
         }}>
-            {//<CiFacebook size={40} color={common["white"]}/>}
+            {//<CiFacebook size={40} color={common["white"]}/>
+            }
             <Typography sx={{
                 ml: 1,
                 color: common["black"],
