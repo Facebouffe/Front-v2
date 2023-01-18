@@ -4,15 +4,15 @@ import axios from "axios";
 
 export interface UserState {
     data: {
-        id: string
-        name: string
-        surname: string
-        mail: string
-        date: string
-        phoneNumber: string
-        address: string
-        profile: string
-        mentorCode: string
+        "id": string,
+        "name": string,
+        "surname": string,
+        "mail": string,
+        "password": string,
+        "date": string,
+        "phoneNumber": string,
+        "address": string,
+        "profile": string
     }
     pending: boolean,
     error: boolean,
