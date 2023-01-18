@@ -23,31 +23,32 @@ const CommandeEnCours = () => {
                             key={index}
                             elevation={4}
                             sx={{padding: 3, marginBottom: 3,ml: {xs:5,md:25},mr: {xs:5,md:25}, borderRadius: 12}}>
-                            <Grid sx={{
+                            <Grid key={index} sx={{
                                 display: 'flex', flexDirection: {xs: 'column', md: 'row'},
                                 justifyContent: {xs: 'none', md: 'space-between'}
                             }}>
-                                <Grid sx={{display: 'flex', flexDirection: 'column'}}>
+                                <Grid key={index} sx={{display: 'flex', flexDirection: 'column'}}>
                                     <Typography variant={'h5'}  sx={{marginBottom: 1}}>{commande.nom_restaurant}</Typography>
                                     <Box sx={{marginBottom: 1}}>Prix : {commande.total_commande} €</Box>
                                     <Box  sx={{marginBottom: 1}}>Date :  {commande.date}</Box>
                                 </Grid>
-                                <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>
-                                <Grid sx={{
+                                <Divider key={index} sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>
+                                <Grid  key={index} sx={{
                                     display: 'flex', flexDirection: 'row',
                                     alignItems: 'center',
                                     justifyContent: 'center'
                                 }}>
-                                    <Accordion expanded={expanded === commande.id} onChange={handleChange(commande.id)}>
-                                        <AccordionSummary expandIcon={<ExpandMoreIcon/>}
+                                    <Accordion key={index} expanded={expanded === commande.id} onChange={handleChange(commande.id)}>
+                                        <AccordionSummary  key={index} expandIcon={<ExpandMoreIcon/>}
                                                           id={commande.id}
                                                           sx={{marginBottom: 1}}
                                         >
-                                            <Grid sx={{
+                                            <Grid  key={index} sx={{
                                                 display: {xs: 'flex', md: 'flex'},
                                                 flexDirection: {xs: 'column', md: 'row'}
                                             }}>
                                                 <Typography
+                                                    key={index}
                                                     sx={{
                                                         display: "flex",
                                                         flexDirection: "column",
@@ -58,14 +59,14 @@ const CommandeEnCours = () => {
                                                     Détails de la commande
                                                 </Typography>
 
-                                                <Typography sx={{color: 'text.secondary'}}>Cliquez pour
+                                                <Typography key={index} sx={{color: 'text.secondary'}}>Cliquez pour
                                                     consulter</Typography>
                                             </Grid>
                                         </AccordionSummary>
-                                        <AccordionDetails>
-                                            <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical"
+                                        <AccordionDetails key={index}>
+                                            <Divider key={index} sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical"
                                                      flexItem/>
-                                            <Typography sx={{display: "flex", flexDirection: "column"}}>
+                                            <Typography key={index} sx={{display: "flex", flexDirection: "column"}}>
                                                 {commande.plats_commandes.map((plat) => {
                                                     return <li>{plat}</li>;
                                                 })}
@@ -73,10 +74,9 @@ const CommandeEnCours = () => {
                                         </AccordionDetails>
                                     </Accordion>
                                 </Grid>
-                                <Divider sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>
-                                <Grid sx={{display: 'flex', flexDirection: 'column',}}>
-                                    <Box sx={{marginBottom: 1,mr:7,mt:4,fontWeight:'bold'}}> {commande.etat_commande}</Box>
-
+                                <Divider key={index} sx={{fontWeight: 'bold'}} variant={'middle'} orientation="vertical" flexItem/>
+                                <Grid key={index} sx={{display: 'flex', flexDirection: 'column',}}>
+                                    <Box key={index} sx={{marginBottom: 1,mr:7,mt:4,fontWeight:'bold'}}> {commande.etat_commande}</Box>
                                 </Grid>
                             </Grid>
                         </Paper>)
