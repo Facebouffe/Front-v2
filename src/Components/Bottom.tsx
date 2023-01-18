@@ -2,13 +2,18 @@ import React from 'react';
 import Box from "@mui/material/Box";
 import {dFlex} from "../themes/commonThemes";
 import {Card, CardContent, Typography} from "@mui/material";
+import {useRouter} from "next/router";
+import ActiveLink from "../../pages/ActiveLink";
 
 export const Bottom = () => {
+    const router = useRouter()
+
+
     return (
         <Box sx={{
             ...dFlex,
-            minHeight: 331,
-            backgroundColor: 'primary.main', display: 'flex', justifyContent: 'center'
+            minHeight: {xs:830,md:331},
+            backgroundColor: 'primary.main', display: 'flex', justifyContent: 'center',flexDirection: {xs:'column',md:'row'}
         }}>
             <Card elevation={6} sx={{
                 backgroundColor: 'primary.main',
@@ -38,8 +43,8 @@ export const Bottom = () => {
             }}>
                 <CardContent>
                     <Typography variant={'h6'} sx={{fontWeight: 'bold'}}> Mentions légales</Typography>
-                    <Typography> Mentions légales </Typography>
-                    <Typography>Confidentialité</Typography>
+                     <Typography > Mentions légales </Typography>
+                <Typography>Confidentialité</Typography>
                     <Typography>Cookies</Typography>
                     <Typography>Speak Up</Typography>
                 </CardContent>
@@ -55,8 +60,8 @@ export const Bottom = () => {
             }}>
                 <CardContent>
                     <Typography variant={'h6'} sx={{fontWeight: 'bold'}}> Aide</Typography>
-                    <Typography>Nous contacter</Typography>
-                    <Typography>FAQ</Typography>
+                    <Typography onClick={() => router.push('/contact')}>Nous contacter</Typography>
+                    <Typography onClick={() => router.push('/faq')}>FAQ</Typography>
                     <Typography>Types de cuisine</Typography>
                 </CardContent>
             </Card>
