@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import {dFlex} from "../themes/commonThemes";
 import {Card, CardContent, Typography} from "@mui/material";
 import {useRouter} from "next/router";
-import ActiveLink from "../../pages/ActiveLink";
 
 export const Bottom = () => {
     const router = useRouter()
@@ -26,10 +25,10 @@ export const Bottom = () => {
             }}>
                 <CardContent>
                     <Typography variant={'h6'} sx={{fontWeight: 'bold'}}> Découvrir FaceBouffe</Typography>
-                    <Typography sx={{mt: 2}}>A Propos</Typography>
-                    <Typography>Nous rejoindre </Typography>
-                    <Typography>Espace Press</Typography>
-                    <Typography>Inscription restaurant</Typography>
+                    <Typography sx={{mt: 2,cursor:'pointer'}}>A Propos</Typography>
+                    <Typography sx={{cursor:'pointer'}}>Nous rejoindre </Typography>
+                    <Typography sx={{cursor:'pointer'}}>Espace Press</Typography>
+                    <Typography sx={{cursor:'pointer'}}>Inscription restaurant</Typography>
                 </CardContent>
             </Card>
             <Card elevation={6} sx={{
@@ -43,10 +42,10 @@ export const Bottom = () => {
             }}>
                 <CardContent>
                     <Typography variant={'h6'} sx={{fontWeight: 'bold'}}> Mentions légales</Typography>
-                     <Typography > Mentions légales </Typography>
-                <Typography>Confidentialité</Typography>
-                    <Typography>Cookies</Typography>
-                    <Typography>Speak Up</Typography>
+                     <Typography onClick={() => router.push('/mentionlegale')} sx={{mt:2,cursor:'pointer'}}> Mentions légales </Typography>
+                <Typography sx={{cursor:'pointer'}}>Confidentialité</Typography>
+                    <Typography sx={{cursor:'pointer'}}>Cookies</Typography>
+                    {/*<Typography sx={{cursor:'pointer'}}>Speak Up</Typography>*/}
                 </CardContent>
             </Card>
             <Card elevation={6} sx={{
@@ -59,10 +58,10 @@ export const Bottom = () => {
                 color: 'white'
             }}>
                 <CardContent>
-                    <Typography variant={'h6'} sx={{fontWeight: 'bold'}}> Aide</Typography>
-                    <Typography onClick={() => router.push('/contact')}>Nous contacter</Typography>
-                    <Typography onClick={() => router.push('/faq')}>FAQ</Typography>
-                    <Typography>Types de cuisine</Typography>
+                    <Typography variant={'h6'} sx={{fontWeight: 'bold'}} > Aide</Typography>
+                    <Typography onClick={() => router.push('/contact')} sx={{cursor:'pointer'}}>Nous contacter</Typography>
+                    <Typography onClick={() => router.push('/faq')} sx={{cursor:'pointer'}}>FAQ</Typography>
+                    {/*<Typography>Types de cuisine</Typography>*/}
                 </CardContent>
             </Card>
             <Card elevation={6} sx={{
@@ -78,8 +77,8 @@ export const Bottom = () => {
                     <Typography variant={'h6'} sx={{fontWeight: 'bold'}}> Gardez FaceBouffe dans votre
                         poche</Typography>
                     <Box sx={{display:'flex', flexDirection:'column',m:5}}>
-                        <Box sx={{borderRadius: 3, width: 210,mb:5}} component={"img"} src={'./apple.png'}></Box>
-                        <Box sx={{borderRadius: 3, width: 210}} component={"img"} src={'./googleplay.png'}></Box>
+                        <Box sx={{borderRadius: 3, width: 210,mb:5,cursor:'pointer'}} component={"img"} src={'./apple.png'}></Box>
+                        <Box sx={{borderRadius: 3, width: 210,cursor:'pointer'}} component={"img"} src={'./googleplay.png'}></Box>
                     </Box>
                 </CardContent>
             </Card>
