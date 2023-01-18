@@ -6,6 +6,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
+import { Analytics } from '@vercel/analytics/react';
+
 
 import { store } from '../store'
 import { Provider } from 'react-redux'
@@ -29,6 +31,7 @@ export default function MyApp(props: MyAppProps) {
               {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
               <CssBaseline />
               <Component {...pageProps} />
+                <Analytics/>
             </ThemeProvider>
           </CacheProvider>
       </Provider>
