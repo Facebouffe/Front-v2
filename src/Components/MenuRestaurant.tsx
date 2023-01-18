@@ -5,8 +5,9 @@ import {Restaurants} from "../data/filter-data"
 import Typography from "@mui/material/Typography";
 import {Paper} from "@mui/material";
 import Grid from "@mui/material/Grid";
-import {IoAdd} from "react-icons/io5";
 import Button from "@mui/material/Button";
+import AddIcon from '@mui/icons-material/Add';
+import IconButton from "@mui/material/IconButton";
 
 export const MenuRestaurant = ( ) => {
     const router = useRouter();
@@ -50,9 +51,9 @@ export const MenuRestaurant = ( ) => {
                                     </Typography>
                                 </Box>
                                 <Box>
-                                    <Button variant={"outlined"}>
-                                        0 <IoAdd size={24}/>
-                                    </Button>
+                                    <IconButton>
+                                        <AddIcon />
+                                    </IconButton>
                                 </Box>
                             </Paper>
                         </Grid>

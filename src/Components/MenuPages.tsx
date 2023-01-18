@@ -1,15 +1,14 @@
 import React from "react";
 import {Divider, Stack} from "@mui/material";
-import {IoHomeOutline, IoRestaurantOutline} from "react-icons/io5";
 import {common} from "@mui/material/colors";
-import Button from "@mui/material/Button";
 import Router from "next/router"
+import  { Home } from '@mui/icons-material'
+import IconButton from "@mui/material/IconButton";
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 
-
-    function handleClick() {
-        Router.push('/commandes').then(r=>true);
-    }
-
+function handleClick() {
+    Router.push('/commandes').then(r=>true);
+}
 
 export const MenuPages = (
 ) => {
@@ -23,12 +22,12 @@ export const MenuPages = (
         sx={{
         }}
         >
-            <Button href={"/"}>
-                <IoHomeOutline size={40} color={common["white"]}/>
-            </Button>
-            <Button onClick={handleClick}>
-                <IoRestaurantOutline size={40} color={common["white"]}/>
-            </Button>
+            <IconButton aria-label={"home"} href={"/"}>
+                <Home/>
+            </IconButton>
+            <IconButton onClick={handleClick} aria-label={"orders"}>
+                <RestaurantMenuIcon/>
+            </IconButton>
         </Stack>
     );
 }
