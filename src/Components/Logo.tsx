@@ -2,7 +2,6 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import {displayOnDesktop, flexCenter} from "../themes/commonThemes";
-//@ts-ignore
 import {CiFacebook} from "react-icons/Ci";
 import {common} from "@mui/material/colors";
 
