@@ -6,15 +6,13 @@ import {filterData} from "../data/filter-data";
 import Box from "@mui/material/Box";
 import axios from "axios";
 
-async function handleClikTab(name: string) {
-    const response = await axios.get(`http://34.140.97.216:80/restaurants/category/${name}`)
-
-    return response.data
-}
-
-export const FilterTab = () => {
+export const FilterTab = (props: { isOpen: any; setOpen: any; }) => {
+    const { isOpen, setOpen } = props;
     const [value, setValue] = React.useState(0);
-
+    async function handleClikTab(name: string) {
+        const response = await axios.get(`http://34.140.197.216:80/restaurants/category/${name}`)
+        setOpen(response.data)
+    }
     const handleChange = (event: any, newValue: React.SetStateAction<number>) => {
         setValue(newValue)
     };
