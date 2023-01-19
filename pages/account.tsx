@@ -23,7 +23,7 @@ export default function Account() {
     } = useAppSelector(selectUser);
 
     useEffect(() => {
-            dispatch(getUser("818eaaea-7e91-4c98-8b11-d29411ae21fc"))
+            dispatch(getUser("e9e18a37-d0e9-438e-919d-b43640b90857"))
         }, [dispatch]
     )
 

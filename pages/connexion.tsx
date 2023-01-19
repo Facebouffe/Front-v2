@@ -18,7 +18,7 @@ const validationSchema = yup.object({
             .required('Email requis'),
     password: yup
             .string()
-            .min(8, 'Le mot de passe doit comporter plus de 8 caractère')
+            //.min(8, 'Le mot de passe doit comporter plus de 8 caractère')
             .required('Mot de passe requis'),
 });
 
@@ -30,11 +30,11 @@ const Connexion = () => {
         },
         validationSchema: validationSchema,
         onSubmit: async (values) => {
-            //alert(JSON.stringify(values, null, 2));
+            alert(JSON.stringify(values, null, 2));
             console.log(values.email)
             console.log(values.password)
             await signIn("credentials", {
-                email: values.email,
+                mail: values.email,
                 password: values.password,
                 redirect: true,
                 callbackUrl: "/"

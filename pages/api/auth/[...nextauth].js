@@ -8,7 +8,7 @@ export default NextAuth({
             name: 'Credentials',
             async authorize(credentials) {
                 try {
-                    const user = await axios.post('http://34.140.197.216:80/auth/login',credentials, {
+                    const user = await axios.post('http://34.140.197.216:80/users/auth/signin',credentials, {
                         headers: {
                             'Content-Type': 'application/json',
                         }
