@@ -12,6 +12,7 @@ export const FilterTab = (props: { isOpen: any; setOpen: any; }) => {
     async function handleClikTab(name: string) {
         const response = await axios.get(`http://34.140.197.216:80/restaurants/category/${name}`)
         setOpen(response.data)
+        console.log(response.data)
     }
     const handleChange = (event: any, newValue: React.SetStateAction<number>) => {
         setValue(newValue)
