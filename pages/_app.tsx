@@ -33,6 +33,7 @@ export default function MyApp(props: MyAppProps) {
               <Component {...pageProps} />
                 <Analytics/>
             </ThemeProvider>
+
           </CacheProvider>
       </Provider>
   );
