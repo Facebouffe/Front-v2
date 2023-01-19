@@ -4,6 +4,13 @@ import Tab from '@mui/material/Tab';
 import Container from "@mui/material/Container";
 import {filterData} from "../data/filter-data";
 import Box from "@mui/material/Box";
+import axios from "axios";
+
+async function handleClikTab(name: string) {
+    const response = await axios.get(`http://34.140.97.216:80/restaurants/category/${name}`)
+
+    return response.data
+}
 
 export const FilterTab = () => {
     const [value, setValue] = React.useState(0);
@@ -36,7 +43,7 @@ export const FilterTab = () => {
             }}>
                 {
                     filterData.map(tab => {
-                        return <Tab key={ tab.id} icon={ tab.icon} label={tab.label}/>;
+                        return <Tab key={ tab.id} icon={ tab.icon} label={tab.label} onClick={() =>handleClikTab(tab.label)}/>;
                     })
                 }
             </Tabs>

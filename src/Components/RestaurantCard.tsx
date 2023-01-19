@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Box from "@mui/material/Box";
 import {Restaurants} from "../data/filter-data";
 import Grid from "@mui/material/Grid";
@@ -7,16 +7,37 @@ import Button from "@mui/material/Button";
 import {ButtonGroup, Paper} from "@mui/material";
 import Link from "next/link";
 import Router from "next/router";
+import axios from "axios";
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {getAllRestaurants, selectRestaurant} from "../../slices/restaurantSlice";
 
 function handleClickMenu(id: any) {
     Router.push(`/Restaurants/${id}`).then(r => true)
 }
 
+
 export const RestaurantCard = () => {
-    const [cards] = React.useState(Restaurants);
+
+    const dispatch = useAppDispatch();
+    const {
+        data,
+        pending,
+        error,
+    } = useAppSelector(selectRestaurant);
+
+    useEffect(() => {
+            dispatch(getAllRestaurants())
+        }, [dispatch]
+    )
+
+    if (error) return <div>Failed to load user</div>
+    if (pending) return <div>Loading</div>
+    if (!data) return null
+
+    /*const [cards] = React.useState(Restaurants);
     if (!cards.length) {
         return null
-    }
+    }*/
 
     return (
         <Box sx={{
@@ -29,7 +50,7 @@ export const RestaurantCard = () => {
                 justifyContent: 'center',
             }}>
                 {
-                    cards.map(restaurant => {
+                    data.map(restaurant => {
                     return (
 
                         <Grid item key={restaurant.id} >
@@ -39,17 +60,17 @@ export const RestaurantCard = () => {
                                 flexDirection: 'column',
                                 alignItems: 'center'
                             }}>
-                                <Box component={"img"} sx={{
+                                {/*<Box component={"img"} sx={{
                                     height: 230,
                                     display: 'block',
                                     overflow: 'hidden',
                                     width: '100%',
                                     borderRadius: 3,
                                 }} src={restaurant.image}>
-                                </Box>
+                                </Box>*/}
                                 <Box>
                                     <Typography>
-                                        {restaurant.name}
+                                        {restaurant.label}
                                     </Typography>
                                 </Box>
                                 <Typography>
