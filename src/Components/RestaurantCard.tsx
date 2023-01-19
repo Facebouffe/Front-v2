@@ -5,16 +5,15 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import {ButtonGroup, Paper} from "@mui/material";
-import Link from "next/link";
-import Router from "next/router";
-import {router} from "next/client";
+import{useRouter} from "next/router";
+
 import comment from "../../pages/comment";
 
-function handleClickMenu(id: any) {
-    Router.push(`/Restaurants/${id}`).then(r => true)
-}
+
 
 export const RestaurantCard = () => {
+    const router = useRouter()
+
     const [cards] = React.useState(Restaurants);
     if (!cards.length) {
         return null
@@ -60,8 +59,8 @@ export const RestaurantCard = () => {
                                 <Box>
                                     <ButtonGroup>
                                         <Button>J'aime</Button>
-                                        <Button >Commentaire</Button>
-                                        <Button onClick={() => handleClickMenu(restaurant.id)}>Commander</Button>
+                                        <Button onClick={() => router.push('/comment')}>Commentaire</Button>
+                                        <Button >Commander</Button>
                                     </ButtonGroup>
                                     </Box>
                             </Paper>
