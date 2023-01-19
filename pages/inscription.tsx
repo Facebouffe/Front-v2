@@ -5,34 +5,36 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Link from "next/link";
 import {Logo} from "../src/Components/Logo";
-import {display} from "@mui/system";
+import Router from "next/router";
+import {LogoBlack} from "../src/Components/LogoBlack";
 
 const Inscription = () => {
+    function handleClickConnection() {
+        Router.push('/connexion').then(r => true);
+    }
+
     return (
         <Box>
             <Grid container alignItems="stretch" sx={{minHeight: "100vh"}}>
                 <Grid item md={5} sx={{
                     display: {xs: "none", md: "flex"},
-                    background: "#444444",
+                    background: "#D43333",
                     color: "white",
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
                 }}>
-                    <Typography variant={"h2"} sx={{
-                        fontStyle: "normal",
-                        fontSize: "36px",
-                        lineHeight: "44px",
-                    }}>
+                    <Typography variant={"h2"} fontSize={60} mb={10} >
                         De retour parmis nous ?
                     </Typography>
-                    <Typography style={{textAlign: "center"}}>
+                    <Typography sx={{ fontSize: 25, marginBottom: 10, marginLeft: 5 }}>
                         Si vous avez déjà un compte, connectez-vous.
                     </Typography>
-                    <Link href={"/connexion"} passHref>
                         <Button
+                            onClick={handleClickConnection}
                             sx={{
                                 background: "#E9E9E9",
+                                color: "black",
                                 borderRadius: "20px",
                                 padding: " 5px 66px",
                                 border: "none",
@@ -49,7 +51,6 @@ const Inscription = () => {
                             }}>
                             Connexion
                         </Button>
-                    </Link>
                 </Grid>
 
                 <Grid item xs={12} md={7} sx={{
@@ -60,13 +61,10 @@ const Inscription = () => {
                     justifyContent: "center",
                     flexDirection: "column",
                 }}>
-                    <Logo/>
-                    <Grid>
+                    <LogoBlack/>
+                    <Grid sx={{display:'flex',justifyContent:'center'}}>
                         <Box sx={{marginLeft: 2, marginRight: 1}}>
-                            <Typography variant={"h2"} sx={{
-                                color: "black",
-                                fontSize: {xs: 30, md: 70}
-                            }}>
+                            <Typography variant={"h2"} sx={{color:'black', fontSize: { xs: 20, md: 50 } }}>
                                 Crée un compte
                             </Typography>
 
@@ -78,48 +76,24 @@ const Inscription = () => {
                                 <TextField sx={{
                                     maxWidth: "70%",
                                     marginBottom: "20px",
-                                    background: "#D9D9D9",
-                                    borderRadius: "20px",
-                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                                    marginRight: "20px",
-                                }} placeholder={"Nom"}/>
+                                  paddingRight: 20, mb: 2, mt: 2}} placeholder={"Nom"}/>
                                 <TextField sx={{
                                     maxWidth: "80%",
                                     marginBottom: "20px",
-                                    background: "#D9D9D9",
-                                    borderRadius: "20px",
-                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                                }} placeholder={"Prénom"}/>
+                                    paddingRight: 20, mb: 2, mt: 2 }}placeholder={"Prénom"}/>
                             </Box>
                             <Box sx={{
                                 display: "flex",
                                 flexDirection: "column"
                             }}>
+                                <TextField sx={{paddingRight: 20, mb: 2, mt: 2}} placeholder={"Adresse postale"}/>
+                                <TextField sx={{paddingRight: 20, mb: 2, mt: 2}} placeholder={"Adresse mail"}/>
                                 <TextField sx={{
                                     paddingRight: 20,
-                                    marginBottom: "20px",
-                                    background: "#D9D9D9",
-                                    borderRadius: "20px",
-                                    outline: "none",
-                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                                }} placeholder={"Adresse postale"}/>
-                                <TextField sx={{
-                                    paddingRight: 20,
-                                    marginBottom: "20px",
-                                    background: "#D9D9D9",
-                                    borderRadius: "20px",
-                                    outline: "none",
-                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                                }} placeholder={"Adresse mail"}/>
-                                <TextField sx={{
-                                    paddingRight: 20,
-                                    marginBottom: "20px",
-                                    background: "#D9D9D9",
-                                    borderRadius: "20px",
-                                    outline: "none",
-                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                                    mb: 2, mt: 2
                                 }} placeholder={"Mot de passe"}/>
-                                <Button sx={{
+                                <Button onClick={handleClickConnection} sx={{
+                                    width:190,
                                     background: "#444444",
                                     color: "white",
                                     borderRadius: "20px",
@@ -128,11 +102,11 @@ const Inscription = () => {
                                     cursor: "pointer",
                                     transition: "background 0.2s ease-in-out",
                                 }} onMouseEnter={(e) => {
-                                    e.currentTarget.style.background = "#444444";
-                                    e.currentTarget.style.color = "#E9E9E9";
-                                }} onMouseLeave={(e) => {
                                     e.currentTarget.style.background = "#E9E9E9";
                                     e.currentTarget.style.color = "#444444";
+                                }} onMouseLeave={(e) => {
+                                    e.currentTarget.style.background = "#D43333";
+                                    e.currentTarget.style.color = "#E9E9E9";
                                 }}>
                                     S'inscrire
                                 </Button>

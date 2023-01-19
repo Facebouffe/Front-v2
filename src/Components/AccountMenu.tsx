@@ -9,9 +9,13 @@ import IconButton from '@mui/material/IconButton';
 import {Tooltip} from "@mui/material";
 import {Logout} from "@mui/icons-material";
 import Router from "next/router";
+import Link from "next/link";
 
 function handleClickAccount(id: any) {
     Router.push(`/account`).then(r => true)
+}
+function handleClickDeconnect(id: any) {
+    Router.push(`/connexion`).then(r => true)
 }
 export const AccountMenu = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -75,17 +79,18 @@ export const AccountMenu = () => {
                     },
                 },
             }}
-              transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-              anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                  transformOrigin={{horizontal: 'right', vertical: 'top'}}
+                  anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
             >
                 <MenuItem onClick={handleClickAccount}><Avatar/>Mon compte</MenuItem>
                 <Divider/>
-                <MenuItem>
-                    <ListItemIcon>
-                    <Logout fontSize="small" />
-                    </ListItemIcon>
-                    Déconnexion
+                <MenuItem onClick={handleClickDeconnect} >
+                        <ListItemIcon>
+                            <Logout fontSize="small"/>
+                        </ListItemIcon>
+                        Déconnexion
                 </MenuItem>
+
             </Menu>
         </>
     )
