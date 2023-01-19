@@ -13,10 +13,10 @@ export default function CommentPage() {
     const {id} = router.query;
     const selectedRestaurant = Restaurants.find(item => item.id.toString() === id)
     const comment = selectedRestaurant && selectedRestaurant.comment
+    const [value, setValue] = useState('');
     if (selectedRestaurant === undefined || comment === undefined) {
         return null
     }
-    const [value, setValue] = useState('');
     const maxLength = 500;
 
     const handleChange = (event: any) => {
@@ -27,8 +27,6 @@ export default function CommentPage() {
     const handleSubmit = () => {
         console.log(`Valeur saisie : ${value}`);
     };
-
-
     return (
         <>
             <Head>
@@ -73,8 +71,8 @@ export default function CommentPage() {
                 </Box>
 
 
-                    {comment.map(comment => {
-                        return (<Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+                    {comment.map((comment,index) => {
+                        return (<Box key={index} sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
                                 <Paper elevation={5} sx={{pl:2,mt: 9, mb: 4, ml: 2, mr: 2}}>{comment}</Paper>
                                 <Paper elevation={5} sx={{pl:2,mb: 4, ml: 2, mr: 2}}>{comment}</Paper>
                                 <Paper elevation={5} sx={{pl:2,mb: 4, ml: 2, mr: 2}}>{comment}</Paper></Box>
