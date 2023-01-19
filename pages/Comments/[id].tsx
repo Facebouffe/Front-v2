@@ -57,26 +57,27 @@ export default function CommentPage() {
                     }} multiline
                                rows={6}
 
-                               sx={{mt: 2, ml: 2, mr: 2, height: 200}} placeholder={'Ecris ton commentaire ...'}
+                               sx={{mt: 2, ml: 2, mr: 2, height: 200,borderRadius:7}} placeholder={'Ecris ton commentaire ...'}
                                value={value}
                                onChange={handleChange}
                                inputProps={{maxLength}}
                     />
+                    <Typography sx={{display: 'flex', justifyContent: 'flex-end'}} variant="caption">
+                    {value.length}/{maxLength} caractères
+                </Typography>
                     <Box sx={{display: 'flex', justifyContent: 'flex-end',mr:5,mt:2}}>
                     <Button sx={{display: 'flex', justifyContent: 'center', width: 200}} variant="contained"
                             color="primary" onClick={handleSubmit}>
                         Valider
                     </Button>
                 </Box>
-                    <Typography sx={{display: 'flex', justifyContent: 'flex-end'}} variant="caption">
-                        {value.length}/{maxLength} caractères
-                    </Typography>
+
 
                     {comment.map(comment => {
                         return (<Box sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
-                                <Paper elevation={5} sx={{mt: 9, mb: 4, ml: 2, mr: 2}}>{comment}</Paper>
-                                <Paper elevation={5} sx={{mb: 4, ml: 2, mr: 2}}>{comment}</Paper>
-                                <Paper elevation={5} sx={{mb: 4, ml: 2, mr: 2}}>{comment}</Paper></Box>
+                                <Paper elevation={5} sx={{pl:2,mt: 9, mb: 4, ml: 2, mr: 2}}>{comment}</Paper>
+                                <Paper elevation={5} sx={{pl:2,mb: 4, ml: 2, mr: 2}}>{comment}</Paper>
+                                <Paper elevation={5} sx={{pl:2,mb: 4, ml: 2, mr: 2}}>{comment}</Paper></Box>
                         )
                     })}
                 </Box>
