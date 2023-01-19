@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import {displayOnDesktop, flexCenter} from "../themes/commonThemes";
 import {common} from "@mui/material/colors";
+import Image from "next/image";
 
 export const Logo = (
 ) => {
@@ -11,9 +12,14 @@ export const Logo = (
             alignItems: 'center',
             display: 'flex',
         }}>
+            <Image src={"/logo-facebouffe.png"}
+                   alt={"FaceBouffe"}
+                   width={60}
+                   height={50}
+            />
             <Typography sx={{
                 ml: 1,
-                color: common["black"],
+                color: common["white"],
                 fontSize: '20px',
                 fontWeight: 'bold',
                 ...displayOnDesktop

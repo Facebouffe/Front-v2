@@ -23,10 +23,10 @@ export const MenuPages = (
         }}
         >
             <IconButton aria-label={"home"} href={"/"}>
-                <Home/>
+                <Home fontSize={"large"}/>
             </IconButton>
             <IconButton onClick={handleClick} aria-label={"orders"}>
-                <RestaurantMenuIcon/>
+                <RestaurantMenuIcon fontSize={"large"}/>
             </IconButton>
         </Stack>
     );
