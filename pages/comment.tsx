@@ -2,8 +2,12 @@ import React, {useState} from 'react';
 import Button from "@mui/material/Button";
 import {Restaurants} from "../src/data/filter-data";
 import {Box} from "@mui/material";
+import Router from "next/router";
 
 const Comment = () => {
+    function handleClickMenu(id: any) {
+        Router.push(`/Restaurants/${id}`).then(r => true)
+    }
     const [selectedRestaurantId, setSelectedRestaurantId] = useState(null);
     const [selectedComment, setSelectedComment] = useState('');
     const [selectedImg,setSelectedImg]=useState('')
@@ -18,17 +22,14 @@ const Comment = () => {
     }
     return (
         <Box>
-    {Restaurants.map(restaurant => (
+
         <Box>
-        <Button key={restaurant.id} onClick={() => handleButtonClick(restaurant.id)}>
-            {restaurant.name}
-        </Button>
+            {selectedComment && <Box>Commentaire sélectionné: {selectedComment}</Box>}
+            {selectedImg && <Box >{selectedImg} </Box>}
         </Box>
-    ))}
-    {selectedComment && <Box>Commentaire sélectionné: {selectedComment}</Box>}
-    {selectedImg && <Box >{selectedImg} </Box>}
-    {/*{selectedImg && <Box component={"img"} src={selectedImg}sx={{width:100}}> </Box>}*/}
 </Box>
+
+
     );
 };
 
