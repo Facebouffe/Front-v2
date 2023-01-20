@@ -46,7 +46,7 @@ export const RestaurantCard = (props: { isOpen: any; setOpen: any; }) => {
                       justifyContent: 'center',
                   }}>
                 {
-                    isOpen && isOpen.map((restaurant: { id: string; label: string, address: string, image: string }) => {
+                    isOpen && isOpen.map((restaurant: { id: string; label: string, address: string, picture: string }) => {
                         return (
 
                             <Grid item key={restaurant.id}>
@@ -56,13 +56,13 @@ export const RestaurantCard = (props: { isOpen: any; setOpen: any; }) => {
                                     flexDirection: 'column',
                                     alignItems: 'center'
                                 }}>
-                                    {restaurant.image && <Box component={"img"} sx={{
+                                    {restaurant.picture && <Box component={"img"} sx={{
                                     height: 230,
                                     display: 'block',
                                     overflow: 'hidden',
                                     width: '100%',
                                     borderRadius: 3,
-                                }} src={restaurant.image}>
+                                }} src={restaurant.picture}>
                                 </Box>}
                                     <Box>
                                         <Typography>
