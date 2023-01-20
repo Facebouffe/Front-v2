@@ -6,6 +6,7 @@ import { Header } from "../src/Components/Header";
 import { FilterTab } from "../src/Components/FilterTab";
 import { RestaurantCard } from "../src/Components/RestaurantCard";
 import Container from "@mui/material/Container";
+import {Bottom} from "../src/Components/Bottom";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
               <RestaurantCard />
             </Container>
           </Box>
+            <Bottom/>
         </Box>
       </main>
     </>
