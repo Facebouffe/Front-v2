@@ -5,7 +5,6 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Link from "next/link";
 import {Logo} from "../src/Components/Logo";
-import {display} from "@mui/system";
 
 const Inscription = () => {
     return (
@@ -111,7 +110,7 @@ const Inscription = () => {
                                     outline: "none",
                                     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                                 }} placeholder={"Adresse mail"}/>
-                                <TextField sx={{
+                                <TextField type={"password"} sx={{
                                     paddingRight: 20,
                                     marginBottom: "20px",
                                     background: "#D9D9D9",
