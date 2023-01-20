@@ -6,23 +6,17 @@ import {getUser, updateUser, userSlice, UserState} from "./userSlice";
 export interface RestaurantState {
     data: {
         id:string
-        name: string
+        label: string
         address: string
-        rate: number
+        rating: number
         like: number
-    }
+    }[]
     pending: boolean,
     error: boolean,
 }
 
 const initialState: RestaurantState = {
-    data: {
-        id: "",
-        name: "",
-        address: "",
-        rate: 0,
-        like: 0
-    },
+    data: [],
     pending: false,
     error: false,
 }
@@ -35,6 +29,16 @@ export const getRestaurant = createAsyncThunk('restaurant/fetchRestaurant', asyn
 
     return response.data
 })
+
+export const getAllRestaurants = createAsyncThunk('restaurant/fetchRestaurants', async (
+    thunkAPI
+) => {
+    const response = await axios.get(`http://34.140.197.216:80/restaurants`)
+    console.log(response.data)
+
+    return response.data
+})
+
 
 export const restaurantSlice = createSlice({
     name: 'restaurant',
@@ -50,6 +54,17 @@ export const restaurantSlice = createSlice({
                 state.data = payload
             })
             .addCase(getRestaurant.rejected, state => {
+                state.pending = false;
+                state.error = true;
+            })
+            .addCase(getAllRestaurants.pending, state => {
+                state.pending = true;
+            })
+            .addCase(getAllRestaurants.fulfilled, (state, {payload}) => {
+                state.pending = false;
+                state.data = payload
+            })
+            .addCase(getAllRestaurants.rejected, state => {
                 state.pending = false;
                 state.error = true;
             })

@@ -9,6 +9,7 @@ import React from "react";
 import {Divider} from "@mui/material";
 import {InfoRestaurant} from "../../src/Components/InfoRestaurant";
 import {MenuRestaurant} from "../../src/Components/MenuRestaurant";
+import axios from "axios/index";
 
 export default function RestaurantPage() {
     const router = useRouter();

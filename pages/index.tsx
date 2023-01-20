@@ -7,8 +7,11 @@ import { FilterTab } from "../src/Components/FilterTab";
 import { RestaurantCard } from "../src/Components/RestaurantCard";
 import Container from "@mui/material/Container";
 import {Bottom} from "../src/Components/Bottom";
+import React from "react";
 
 export default function Home() {
+    const [selectedTab, setSelectedTab] = React.useState();
+
   return (
     <>
       <Head>
@@ -27,14 +30,14 @@ export default function Home() {
           }}>
           <Box>
             <Header />
-            <FilterTab />
+            <FilterTab isOpen={selectedTab} setOpen={setSelectedTab} />
             <Container
               maxWidth={"xl"}
               sx={{
                 mb: 3,
                 mt: 5,
               }}>
-              <RestaurantCard />
+              <RestaurantCard isOpen={selectedTab} setOpen={setSelectedTab} />
             </Container>
           </Box>
             <Bottom/>
