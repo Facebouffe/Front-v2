@@ -1,4 +1,14 @@
-import {GiHearts, GiFrenchFries,GiHamburger,GiFullPizza, GiSushis, GiDonerKebab, GiChickenLeg, GiSteak, GiCurledLeaf} from "react-icons/gi"
+import {
+    GiChickenLeg,
+    GiCurledLeaf,
+    GiDonerKebab,
+    GiFrenchFries,
+    GiFullPizza,
+    GiHamburger,
+    GiHearts,
+    GiSteak,
+    GiSushis
+} from "react-icons/gi"
 
 export const filterData = [
     { id: 1, label: 'Friterie', icon: <GiFrenchFries size={24}/>},
@@ -17,6 +27,7 @@ const randomRating = () => Math.random() * 5;
 export const Restaurants = [
     {
         id: 1,
+        comment: ["J'ai vraiment apprécié mon expérience au restaurant X. La nourriture était délicieuse et les portions étaient généreuses. Le service était également excellent, les serveurs étaient attentifs et serviables. Je recommande vivement ce restaurant."],
         name: "Chez Marie",
         rating: randomRating(),
         address: "123 Rue de la Paix, Paris, France",
@@ -98,6 +109,7 @@ export const Restaurants = [
     },
     {
         id: 2,
+        comment: ["Le restaurant Y avait l'air prometteur, mais j'ai été déçu par la qualité de la nourriture. Les plats étaient insipides et pas très frais. Le service était également lent et peu professionnel. Je ne recommande pas ce restaurant."],
         name: "Le Bistrot",
         rating: randomRating(),
         address: "456 Avenue du Général de Gaulle, Lyon, France",
@@ -161,6 +173,7 @@ export const Restaurants = [
     },
     {
         id: 3,
+        comment:["J'ai visité le restaurant Z avec des amis et nous avons tous été impressionnés par la qualité de la nourriture et l'atmosphère agréable. Les plats étaient bien présentés et très savoureux. Le service était également excellent, les serveurs étaient attentifs et serviables. Je reviendrais sans hésiter."],
         name: "La Trattoria",
         rating: randomRating(),
         address: "789 Via Roma, Rome, Italie",
@@ -260,6 +273,7 @@ export const Restaurants = [
     },
     {
         id: 4,
+        comment:["Le restaurant A était très décevant. La nourriture était médiocre et les portions étaient petites. Le service était également lent et peu attentif. Je ne recommande pas ce restaurant."],
         name: "Chez Marie",
         rating: randomRating(),
         address: "123 Rue de la Paix, Paris, France",
@@ -287,6 +301,7 @@ export const Restaurants = [
     },
     {
         id: 5,
+        comment: ["J'ai passé une soirée merveilleuse au restaurant B. La nourriture était délicieuse, les plats étaient bien présentés et très savoureux. Le service était également excellent, les serveurs étaient attentifs et serviables. Je recommande vivement ce restaurant pour une soirée spéciale."],
         name: "Le Bistrot",
         rating: randomRating(),
         address: "456 Avenue du Général de Gaulle, Lyon, France",
@@ -314,6 +329,7 @@ export const Restaurants = [
     },
     {
         id: 6,
+        comment:["Le restaurant C est un endroit incroyable pour manger. La nourriture était absolument délicieuse, les plats étaient bien présentés et très savoureux. Le service était également excellent, les serveurs étaient attentifs et serviables. Je recommande vivement ce restaurant pour une expérience gastronomique exceptionnelle."],
         name: "La Trattoria",
         rating: randomRating(),
         address: "789 Via Roma, Rome, Italie",
@@ -341,6 +357,7 @@ export const Restaurants = [
     },
     {
         id: 7,
+        comment:["Le restaurant D m'a déçu. La nourriture était moyenne et les portions étaient petites. Le service était également lent et peu attentif. Je ne recommande pas ce restaurant."],
         name: "Chez Marie",
         rating: randomRating(),
         address: "123 Rue de la Paix, Paris, France",
@@ -368,6 +385,7 @@ export const Restaurants = [
     },
     {
         id: 8,
+        comment:["J'ai passé un excellent moment au restaurant E. La nourriture était délicieuse, les plats étaient bien présentés et très savoureux. Le service était également excellent, les serveurs étaient attentifs et serviables. Je recommande vivement ce restaurant pour un déjeuner ou un dîner en famille."],
         name: "Le Bistrot",
         rating: randomRating(),
         address: "456 Avenue du Général de Gaulle, Lyon, France",
@@ -395,6 +413,7 @@ export const Restaurants = [
     },
     {
         id: 9,
+        comment:["Le restaurant F est un endroit formidable pour manger. La nourriture était délicieuse, les plats étaient bien présentés et très savoureux. Le service était également excellent, les serveurs étaient attentifs et serviables. Je recommande vivement ce restaurant pour une expérience culinaire inoubliable."],
         name: "La Trattoria",
         rating: randomRating(),
         address: "789 Via Roma, Rome, Italie",

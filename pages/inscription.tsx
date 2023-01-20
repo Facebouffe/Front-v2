@@ -90,6 +90,27 @@ const Inscription = () => {
                                 <TextField sx={{paddingRight: 20, mb: 2, mt: 2}} placeholder={"Adresse mail"}/>
                                 <TextField sx={{
                                     paddingRight: 20,
+                                    marginBottom: "20px",
+                                    background: "#D9D9D9",
+                                    borderRadius: "20px",
+                                    outline: "none",
+                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                                }} placeholder={"Adresse postale"}/>
+                                <TextField sx={{
+                                    paddingRight: 20,
+                                    marginBottom: "20px",
+                                    background: "#D9D9D9",
+                                    borderRadius: "20px",
+                                    outline: "none",
+                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                                }} placeholder={"Adresse mail"}/>
+                                <TextField type={"password"} sx={{
+                                    paddingRight: 20,
+                                    marginBottom: "20px",
+                                    background: "#D9D9D9",
+                                    borderRadius: "20px",
+                                    outline: "none",
+                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                                     mb: 2, mt: 2
                                 }} placeholder={"Mot de passe"}/>
                                 <Button onClick={handleClickConnection} sx={{
